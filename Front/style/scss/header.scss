@@ -1,0 +1,90 @@
+/*=============================
+=            HEADER           =
+=============================*/
+
+#header-desktop{
+	position: fixed;
+	z-index: 20;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	height: 80px;
+	transition: all 0.25s ease;
+	.wrapper{
+		height: 100%;
+		display: flex;
+		flex-flow: row wrap;
+		width: 95%;
+		margin: auto;
+		justify-content: space-between;
+		align-items: center;
+		.logo{
+			width: 135px;
+			position: relative;
+			img{
+				display: none;
+				width: 100%;
+			}
+			&.color{
+				img:nth-child(1){
+					display: block;
+				}
+			}
+			&.white{
+				img:nth-child(2){
+					display: block;
+				}
+			}
+		}
+		.container-link{
+			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
+			a{
+				display: block;
+				text-decoration: none;
+				font-size: $link_textsize_desktop;
+				line-height: $link_lineheight_desktop;
+				font-family: $font_2;
+				margin-right: 65px;
+				&:last-child{
+					margin-right: 0px;
+				}
+			}
+			&.white{
+				a{
+					color: #FFF;
+				}
+			}
+			&.color{
+				a{
+					color: $colorMain_1;
+				}
+			}
+		}
+		.btn{
+			text-decoration: none;
+			@include buttonBig;
+			background-color: $colorMain_3;
+			.btn-text{
+				color: #FFF;
+			}
+		}
+	}
+	&.scroll{
+		box-shadow: 0 4px 20px 0 rgba(0,0,0,0.1);
+		background-color: #FFFFFF;
+		.logo {
+			img:nth-child(1){
+				display: block;
+			}
+			img:nth-child(2){
+				display: none !important;
+			}
+		}
+	}
+}
+
+/*=================================
+=            END HEADER           =
+==================================*/

@@ -1,0 +1,143 @@
+@import 'common.scss';
+@import 'header.scss';
+/*===================================
+=            PAGE CONTACT           =
+===================================*/
+
+#section-contact{
+	position: relative;
+	.wrapper{
+		@include styleGrid1;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+		
+	}
+	.container-illu{
+		position: relative;
+		margin-left: calc(0px - (100vw - #{$grid_desktop_1})/2);
+		@media screen and (max-width: 1600px){
+			width: calc(50% + ((100vw - #{$grid_desktop_1})/2));
+		}
+		@media screen and (min-width: 1600px){
+			width: calc(40% + ((100vw - #{$grid_desktop_1})/2));
+		}
+		img{
+			width: 100%;
+		}
+	}
+	.container-text{
+		position: relative;
+		width: 500px;
+		h2{
+			@include styleH1;
+			span:before{
+				background: linear-gradient(135.28deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+			}
+			strong{
+				position: relative;
+				&:after{
+					content: '';
+					position: absolute;
+					top: 85%;
+					left: 0px;
+					width: 100%;
+					height: 2px;
+					background-color: #FFD656;
+				}
+			}
+		}
+		p{
+			@include styleParagraphBig;
+		}
+		.adress{
+			margin-top: 45px;
+			display: block;
+			@include styleH5;
+			text-decoration: none;
+		}
+		.tel{
+			margin-top: 5px;
+			display: flex;
+			flex-flow: row wrap;
+			text-decoration: none;
+			img{
+				margin-right: 10px;
+			}
+			span{
+				@include styleParagraphMedium;
+			}
+		}
+		.container-btn{
+			position: relative;
+			margin-top: 95px;
+			
+			display: flex;
+			width: 100%;
+			border-radius: 40px;
+			overflow: hidden;
+			.btn{	
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+				position: relative;
+				z-index: 1;
+				padding: 22px 0px 22px 0px;
+				display: flex;
+				flex-flow: row wrap;
+				width: 50%;
+				justify-content: center;
+				align-items: center;
+				.btn-text{
+					font-family: $font_2;
+					color: #FFF;
+					font-size: $buttonBig_textsize_desktop;
+					line-height: $buttonBig_lineheight_desktop;
+				}
+				.btn-arrow{
+					width: 14px;
+					height: 8px;
+					margin-left: 16px;
+					fill: #FFF;
+					transition: all 0.25s ease;
+				}
+				&:hover{
+					.btn-arrow{
+						transform: translateX(3px) scaleX(1.1);
+					}
+				}
+			}
+			&:after{
+				content: '';
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				width: 2px;
+				height: 100%;
+				transform: translateX(-50%);
+				background-color: rgba(255, 255, 255, 0.4);
+				z-index: 1;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0px;
+				height: 100%;
+				width: 150%;
+				left: 0px;
+				background: linear-gradient(315deg, #581EFD 0%, #FA92A7 100%);
+				transition: all 0.25s ease;
+			}
+			&:hover:before{
+				 background-position:-200px;  
+			}
+		}
+	}
+}
+
+
+/*=======================================
+=            END PAGE CONTACT           =
+=======================================*/
+@import 'footer.scss';

@@ -1,0 +1,492 @@
+@font-face {
+	font-family:Nunito-Regular;
+	src:url(../../fonts/Nunito-Regular.ttf);
+}
+@font-face {
+	font-family:OpenSans-Bold;
+	src:url(../../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+	font-family:OpenSans-Regular;
+	src:url(../../fonts/OpenSans-Regular.ttf);
+}
+body, html, *
+{
+	padding: 0px;
+	margin: 0px;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+}
+body, html {
+	width: 100%;
+	height: 100%;
+}
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, i
+{
+	font-weight: normal;
+	font-style: normal;
+}
+body.block
+{
+	overflow:hidden;
+}
+
+/* ------------------------------------------------------------- */
+/* ********************* CONTAINER GENERAL ********************* */
+/* ------------------------------------------------------------- */
+
+main
+{
+	position: relative;
+	width: 100%;
+	overflow:hidden;
+}
+
+/* ----------------------------------------------------------------- */
+/* ********************* END CONTAINER GENERAL ********************* */
+/* ----------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------- */
+/* ********************* VARIABLES ********************* */
+/* ----------------------------------------------------- */
+
+/*==============================
+=            COLORS            =
+==============================*/
+
+	/*----------  MAIN COLORS  ----------*/
+	$colorMain_1: #232C4C;
+	$colorMain_2: #6A6992;
+	$colorMain_3: #562FFD;
+
+	/*----------  GRADIENT  ----------*/
+	$colorGradient_1: 319.74deg, #EA46A1 0%, #FFD656 100%;
+	$colorGradient_2: 134.85deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%;
+	$colorGradient_3: 216.54deg, #562FFD 0%, #4897FF 74.37%, #48D3FF 100%;
+	$colorGradient_4: 319.74deg, 138.67deg, #FFD656 0%, #9ADB5B 100%;
+
+
+/*=====  End of COLORS  ======*/
+
+
+/*=============================
+=            FONTS            =
+=============================*/
+
+	$font_1: Nunito-Regular;
+	$font_2: OpenSans-Bold;
+	$font_3: OpenSans-Regular;
+
+/*=====  End of FONTS  ======*/
+
+
+/*=================================
+=            TEXT SIZE            =
+=================================*/
+
+	/*----------  H1  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h1_textsize_desktop: 50px;
+		$h1_lineheight_desktop: 54px;
+
+
+	/*----------  H2  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h2_textsize_desktop: 36px;
+		$h2_lineheight_desktop: 49px;
+
+
+	/*----------  H3  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h3_textsize_desktop: 30px;
+		$h3_lineheight_desktop: 41px;
+
+
+	/*----------  H4  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h4_textsize_desktop: 26px;
+		$h4_lineheight_desktop: 35px;
+
+
+	/*----------  H5  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h5_textsize_desktop: 22px;
+		$h5_lineheight_desktop: 30px;
+
+	/*----------  H6  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$h6_textsize_desktop: 18px;
+		$h6_lineheight_desktop: 24px;
+
+
+	/*----------  PARAGRAPH BIG  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$paragraphBig_textsize_desktop: 20px;
+		$paragraphBig_lineheight_desktop: 30px;
+
+
+	/*----------  PARAGRAPH MEDIUM  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$paragraphMedium_textsize_desktop: 18px;
+		$paragraphMedium_lineheight_desktop: 28px;
+
+	/*----------  PARAGRAPH NORMAL  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$paragraphNormal_textsize_desktop: 16px;
+		$paragraphNormal_lineheight_desktop: 26px;
+
+	/*----------  PARAGRAPH SMALL  ----------*/
+		/*----------  DESKTOP  ----------*/
+		$paragraphSmall_textsize_desktop: 14px;
+		$paragraphSmall_lineheight_desktop: 28px;
+
+
+	/*----------  LINK BIG  ----------*/
+		$link_textsize_desktop: 13px;
+		$link_lineheight_desktop: 18px;
+
+	/*----------  LINK MEDIUM  ----------*/
+		$link_textsize_desktop: 12px;
+		$link_lineheight_desktop: 17px;
+
+	/*----------  BUTTON BIG  ----------*/
+		$buttonBig_textsize_desktop: 13px;
+		$buttonBig_lineheight_desktop: 18px;
+
+	/*----------  BUTTON SMALL  ----------*/
+		$buttonSmall_textsize_desktop: 12px;
+		$buttonSmall_lineheight_desktop: 17px;
+
+/*=====  End of TEXT SIZE  ======*/
+
+
+/*============================
+=            GRID            =
+============================*/
+
+	$grid_desktop_1: 1200px;
+	$grid_desktop_2: 1100px;
+	$grid_desktop_3: 1000px;
+	$grid_desktop_4: 900px;
+
+	$grid_tablet: 100%;
+	$grid_mobile: 100%;
+
+/*=====  End of GRID  ======*/
+
+
+/*===================================
+=            BREAK POINT            =
+===================================*/
+
+	$breakPoint_tablet: 1250px;
+	$breakPoint_mobile: 700px;
+
+
+/*=====  End of BREAK POINT  ======*/
+
+/* --------------------------------------------------------- */
+/* ********************* END VARIABLES ********************* */
+/* --------------------------------------------------------- */
+
+/* ------------------------------------------------- */
+/* ********************* MIXIN ********************* */
+/* ------------------------------------------------- */
+
+	/*----------  FUNCTION  ----------*/
+	/*
+	@mixin rgba-background($hexcolor, $opacity) {
+	  background-color: rgba($hexcolor, $opacity); 
+	}*/
+
+	/*----------  HEADING  ----------*/
+
+		/*----------  H1  ----------*/
+		@mixin styleH1{
+			font-family: $font_1;
+		  	color: $colorMain_1;
+
+		  	font-size: $h1_textsize_desktop;
+			line-height: $h1_lineheight_desktop;
+		}
+
+		/*----------  H2  ----------*/
+		@mixin styleH2{
+			font-family: $font_1;
+		  	color: $colorMain_1;
+			font-size: $h2_textsize_desktop;
+			line-height: $h2_lineheight_desktop;
+		}
+
+		/*----------  H3  ----------*/
+		@mixin styleH3{
+			font-family: $font_1;
+		  	color: $colorMain_1;
+			font-size: $h3_textsize_desktop;
+			line-height: $h3_lineheight_desktop;
+		}
+
+		/*----------  H4  ----------*/
+		@mixin styleH4{
+			font-family: $font_1;
+		  	color: $colorMain_1;
+			font-size: $h4_textsize_desktop;
+			line-height: $h4_lineheight_desktop;
+		}
+
+		/*----------  H5  ----------*/
+		@mixin styleH5{
+			font-family: $font_1;
+		  	color: $colorMain_1;
+			font-size: $h5_textsize_desktop;
+			line-height: $h5_lineheight_desktop;
+		}
+
+		/*----------  H6  ----------*/
+		@mixin styleH6{
+			font-family: $font_2;
+		  	color: $colorMain_1;
+			font-size: $h6_textsize_desktop;
+			line-height: $h6_lineheight_desktop;
+		}
+
+
+		/*----------  PARAGRAPH BIG  ----------*/
+		@mixin styleParagraphBig{
+			font-family: $font_1;
+		  	color: $colorMain_2;
+			font-size: $paragraphBig_textsize_desktop;
+			line-height: $paragraphBig_lineheight_desktop;
+		}
+
+		/*----------  PARAGRAPH MEDIUM  ----------*/
+		@mixin styleParagraphMedium{
+			font-family: $font_1;
+		  	color: $colorMain_2;
+			font-size: $paragraphMedium_textsize_desktop;
+			line-height: $paragraphMedium_lineheight_desktop;
+		}
+
+		/*----------  PARAGRAPH NORMAL  ----------*/
+		@mixin styleParagraphNormal{
+			font-family: $font_1;
+		  	color: $colorMain_2;
+			font-size: $paragraphNormal_textsize_desktop;
+			line-height: $paragraphNormal_lineheight_desktop;
+		}
+
+		/*----------  PARAGRAPH SMALL  ----------*/
+		@mixin styleParagraphSmall{
+			font-family: $font_1;
+		  	color: $colorMain_2;
+			font-size: $paragraphSmall_textsize_desktop;
+			line-height: $paragraphSmall_lineheight_desktop;
+		}
+
+
+		/*----------  BUTTON  ----------*/
+		@mixin buttonBig{
+		  	padding: 17px 30px 17px 30px;
+		  	border-radius: 40px;
+		  	display: inline-flex;
+		  	flex-flow: row wrap;
+		  	align-items: center;
+		  	text-decoration: none;
+			.btn-text{
+				font-family: $font_2;
+				font-size: $buttonBig_textsize_desktop;
+				line-height: $buttonBig_lineheight_desktop;
+			}
+			.btn-arrow{
+				width: 14px;
+				margin-left: 16px;
+				transition: all 0.25s ease;
+			}
+			&:hover{
+				.btn-arrow{
+					transform: translateX(3px) scaleX(1.1);
+				}
+			}
+		}
+
+		@mixin buttonSmall{
+		  	padding: 14px 27px 14px 27px;
+		  	border-radius: 40px;
+			.btn-text{
+				font-family: $font_1;
+				font-size: $buttonSmall_textsize_desktop;
+				line-height: $buttonSmall_lineheight_desktop;
+			}
+		}
+
+
+		/*----------  GRID  ----------*/
+
+			/*----------  SIZE 1  ----------*/
+			@mixin styleGrid1{
+				margin-right: auto;
+				margin-left: auto;
+				@media screen and (min-width: $breakPoint_tablet){
+					width: $grid_desktop_1;
+				}
+				@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+					width: $grid_tablet;
+					padding-right: 50px;
+					padding-left: 50px;
+				}
+				@media screen and (max-width: $breakPoint_mobile){
+					width: $grid_mobile;
+					padding-right: 25px;
+					padding-left: 25px;
+				}
+			}
+
+			/*----------  SIZE 2  ----------*/
+			@mixin styleGrid2{
+				margin-right: auto;
+				margin-left: auto;
+				@media screen and (min-width: $breakPoint_tablet){
+					width: $grid_desktop_2;
+				}
+				@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+					width: $grid_tablet;
+					padding-right: 50px;
+					padding-left: 50px;
+				}
+				@media screen and (max-width: $breakPoint_mobile){
+					width: $grid_mobile;
+					padding-right: 25px;
+					padding-left: 25px;
+				}
+			}
+
+			/*----------  SIZE 3  ----------*/
+			@mixin styleGrid3{
+				margin-right: auto;
+				margin-left: auto;
+				@media screen and (min-width: $breakPoint_tablet){
+					width: $grid_desktop_3;
+				}
+				@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+					width: $grid_tablet;
+					padding-right: 50px;
+					padding-left: 50px;
+				}
+				@media screen and (max-width: $breakPoint_mobile){
+					width: $grid_mobile;
+					padding-right: 25px;
+					padding-left: 25px;
+				}
+			}
+
+			/*----------  SIZE 4  ----------*/
+			@mixin styleGrid4{
+				margin-right: auto;
+				margin-left: auto;
+				@media screen and (min-width: $breakPoint_tablet){
+					width: $grid_desktop_4;
+				}
+				@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+					width: $grid_tablet;
+					padding-right: 50px;
+					padding-left: 50px;
+				}
+				@media screen and (max-width: $breakPoint_mobile){
+					width: $grid_mobile;
+					padding-right: 25px;
+					padding-left: 25px;
+				}
+			}
+
+/* ----------------------------------------------------- */
+/* ********************* END MIXIN ********************* */
+/* ----------------------------------------------------- */
+
+/* ------------------------------------------------------ */
+/* ********************* ANIM PAGES ********************* */
+/* ------------------------------------------------------ */
+
+.container__anim,
+.container__anim__dt {
+  .anim__slide {
+    opacity: 0;
+    transition: all 1250ms cubic-bezier(0.240, 0.765, 0.360, 1.005);
+    transform: translateY(20px);
+  }
+  .anim__fade{
+  	opacity: 0;
+  	transition: all 1250ms cubic-bezier(0.240, 0.765, 0.360, 1.005);
+  }
+  &.reach .anim__slide,
+  &.active .anim__slide {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  &.reach .anim__fade,
+  &.active .anim__fade {
+    opacity: 1;
+  }
+  @for $i from 1 to 20 {
+    .anim__delayMedium_#{$i} { transition-delay: $i * 0.1s !important; }
+  }
+  @for $i from 1 to 20 {
+    .anim__delaySmall_#{$i} { transition-delay: $i * 0.05s !important; }
+  }
+}
+
+/* ---------------------------------------------------------- */
+/* ********************* END ANIM PAGES ********************* */
+/* ---------------------------------------------------------- */
+
+/* ----------------------------------------------------- */
+/* ********************* WRAP LINE ********************* */
+/* ----------------------------------------------------- */
+
+.wrapLine.bnd{
+	span{
+		display: inline-block;
+		overflow: hidden;
+		position: relative;
+		transition: all 0.75s ease;
+		color: rgba(0, 0, 0, 0);
+		@for $i from 1 to 10 {
+			&:nth-child(#{$i}) { transition-delay: $i * 0.15s; }
+		  	&:nth-child(#{$i}):before { transition-delay: $i * 0.1s; }
+		}
+		&:before{
+			content:'';
+			position: absolute;
+			top: 50%;
+			left: 0px;
+			height: 95%;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 1);
+			transform: translateY(-50%) translateX(100%);
+			transition: all 750ms cubic-bezier(0.240, 0.765, 0.360, 1.005);
+		}
+	}
+}
+.container__anim.reach{
+	.wrapLine.bnd{
+		span{
+			color: rgba(0, 0, 0, 1);
+		}
+		span:before{
+			transform: translateY(-50%) translateX(-100%);
+		}
+		
+	}
+}
+
+
+
+/* --------------------------------------------------------- */
+/* ********************* END WRAP LINE ********************* */
+/* --------------------------------------------------------- */
+
+

@@ -1,0 +1,258 @@
+@import 'common.scss';
+@import 'header.scss';
+/*======================================
+=            PAGE ENTREPRISE           =
+======================================*/
+
+#section-cover{
+	position: relative;
+	.wrapper{
+		@include styleGrid2;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: flex-end;
+		h1{
+			width: 620px;
+			@include styleH1;
+			strong{
+				position: relative;
+				&:after{
+					content: '';
+					position: absolute;
+					top: 85%;
+					left: 0px;
+					width: 100%;
+					height: 2px;
+					background-color: #FFD656;
+				}
+			}
+		}
+		.btn{
+			@include buttonBig;
+			background: linear-gradient(134.85deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+			.btn-text{
+				color: #FFF;
+			}
+			.btn-arrow{
+				fill: #FFF;
+				transform: rotate(90deg);
+			}
+			&:hover .btn-arrow{
+				transform: rotate(90deg) translateX(3px) scaleX(1.1);
+			}
+		}
+	}
+}
+
+
+#section-pres{
+	background-color: #FAFAFF;
+	position: relative;
+	margin-top: 110px;
+	padding-top: 100px;
+	padding-bottom: 110px;
+	.obj{
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		background-color: #FFF;
+	}
+	.wrapper{
+		@include styleGrid2;
+		position: relative;
+	}
+	.container-el{
+		margin-top: 72px;
+		.el{
+			width: 100%;
+			margin-bottom: 160px;
+			&:last-child{
+				margin-bottom: 0px;
+			}
+			.content{
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: space-between;
+			}
+			.illu{
+				width: 550px;
+				img{
+					width: 100%;
+				}
+			}
+			.text{
+				width: 430px;
+				h3{
+					@include styleH3;
+					margin-bottom: 15px;
+				}
+				p{
+					@include styleParagraphMedium;
+				}
+			}
+		}
+	}
+}
+
+#section-ftr{
+	padding: 85px 0px 100px 0px;
+	.wrapper{
+		@include styleGrid1;
+	}
+	.container-text{
+		text-align: center;
+		h2{
+			@include styleH2;
+		}
+		p{
+			@include styleParagraphMedium;
+			margin-top: 12px;
+		}
+	}
+	.container-el{
+		margin-top: 62px;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		.el{
+			width: 28%;
+			.icn{
+				width: 60px;	
+				border-radius: 30px;
+				background-color: #FFFFFF;
+				margin-bottom: 25px;
+			}
+			&:nth-child(1) .icn{
+				box-shadow: 0 10px 20px 0 rgba(255,21,0,0.15);
+			}
+			&:nth-child(2) .icn{
+				box-shadow: 0 10px 20px 0 rgba(88,193,234,0.2);
+			}
+			&:nth-child(3) .icn{
+				box-shadow: 0 10px 20px 0 rgba(201,94,204,0.2);
+			}
+			h3{
+				@include styleH4;
+				margin-bottom: 14px;
+			}
+			p{
+				@include styleParagraphNormal;
+			}
+		}
+	}
+}
+
+#section-form{
+	position: relative;
+	padding: 90px 0px 40px 0px;
+	background: linear-gradient(321.13deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+	.wrapper{
+		position: relative;
+		@include styleGrid4;
+	}
+	.container-text{
+		text-align: center;
+		h2{
+			@include styleH2;
+			color: #FFF;
+		}
+		.btn{
+			@include buttonBig;
+			background-color: #FFF;
+			box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+			margin-top: 47px;
+			.btn-img{
+				width: 22px;
+				margin-right: 17px;
+			}
+			.btn-text{
+				color: $colorMain_1;
+			}
+			.btn-arrow{
+				fill: $colorMain_1;
+			}
+		}
+		.sep{
+			margin: 50px auto 0px auto;
+			position: relative;
+			height: 30px;	
+			width: 30px;	
+			border-radius: 30px;
+			border: 1px solid #FFFFFF;
+			span{
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0px;
+				width: 100%;
+				font-size: 12px;
+				font-family: $font_1;
+				color: #FFF;
+			}
+		}
+	}
+	form{
+		position: relative;
+		width: 100%;
+		margin-top: 60px;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		justify-content: space-between;
+		.label{
+			width: 49%;
+			margin-bottom: 18px;
+			.title{
+				@include styleParagraphSmall;
+				color: #FFF;
+			}
+			input,
+			textarea{
+				margin-top: 13px;
+				width: 100%;
+				background-color: #FFF;
+				height: 60px;	
+				border-radius: 7px;	
+				background-color: #FFFFFF;
+				border: none;
+				padding-left: 20px;
+				@include styleParagraphSmall;
+				color: $colorMain_1;
+				outline: none;
+			}
+			textarea{
+				height: 115px;
+				padding: 20px;
+				resize: none;
+				outline: none;
+			}
+			&.textarea{
+				width: 100%;
+			}
+		}
+		button{
+			@include buttonBig;
+			border: none;
+			background-color: #FFF;
+			.btn-text{
+				background: -webkit-linear-gradient(134.85deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.btn-arrow{
+				fill: #FFA9BE;
+			}
+		}
+	}
+	.btn{
+		margin: 45px auto 0px auto;
+	}
+}
+
+/*==========================================
+=            END PAGE ENTREPRISE           =
+==========================================*/
+@import 'footer.scss';
