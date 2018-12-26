@@ -38,33 +38,47 @@ $app->get('/home', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'home'));
-
+  $header   = $api->query(Predicates::at('document.type', 'header'));
   // Render the page
-  render($app, 'home', array('document' => $document));
+  render($app, 'home', array('document' => $document, 'header' => $header));
 });
 
 $app->get('/talent', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'talent'));
+  $header   = $api->query(Predicates::at('document.type', 'header'));
 
   // Render the page
-  render($app, 'talent', array('document' => $document));
+  render($app, 'talent', array('document' => $document, 'header' => $header));
 });
 
 $app->get('/entreprise', function ($request, $response) use ($app, $prismic) {
-  render($app, 'entreprise');
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'entreprise'));
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+
+  // Render the page
+  render($app, 'entreprise', array('document' => $document, 'header' => $header));
 });
 
 $app->get('/about', function ($request, $response) use ($app, $prismic) {
-  render($app, 'about');
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'about'));
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+
+  // Render the page
+  render($app, 'about', array('document' => $document, 'header' => $header));
 });
 
 $app->get('/contact', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'contact'));
+  $header   = $api->query(Predicates::at('document.type', 'header'));
 
   // Render the page
-  render($app, 'contact', array('document' => $document));
+  render($app, 'contact', array('document' => $document, 'header' => $header));
 });

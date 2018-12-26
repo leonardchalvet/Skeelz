@@ -1,17 +1,23 @@
+<?php
+	use Prismic\Dom\RichText;
+	$header = $WPGLOBAL['header']->results[0]->data;	
+?>
+
+
 <header id="header-desktop">
 	<div class="wrapper">
 		<a class="logo <?php echo($styleLogo); ?>" href="index.php">
-			<img src="img/common/logo-color.svg" alt="">
-			<img src="img/common/logo-white.svg" alt="">
+			<img src="<?= $header->logo_color->url ?>" alt="">
+			<img src="<?= $header->logo_white->url ?>" alt="">
 		</a>
 		<div class="container-link <?php echo($styleLink); ?>">
-			<a href="talents.php">TALENT</a>
-			<a href="entreprise.php">ENTREPRISE</a>
-			<a href="about.php">EQUIPE</a>
-			<a href="newz.php">NEWZ</a>
+			<a href="/<?= $header->cta_link_talent->type; ?>"><?= RichText::asText($header->cta_talent); ?></a>
+			<a href="/<?= $header->cta_link_entreprise->type; ?>"><?= RichText::asText($header->cta_entreprise); ?></a>
+			<a href="/<?= $header->cta_link_team->type; ?>"><?= RichText::asText($header->cta_team); ?></a>
+			<a href="/<?= $header->cta_link_newz->type; ?>"><?= RichText::asText($header->cta_newz); ?></a>
 		</div>
-		<a href="contact.php" class="btn">
-			<span class="btn-text">CONTACT</span>	
+		<a href="/<?= $header->cta_link_contact->type; ?>" class="btn">
+			<span class="btn-text"><?= RichText::asText($header->cta_contact); ?></span>	
 		</a>
 	</div>
 </header>
