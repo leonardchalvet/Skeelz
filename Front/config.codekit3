@@ -51,6 +51,13 @@
 		"oAP": "/fonts/Nunito-Regular.ttf",
 		"oF": 0
 		},
+	"/fonts/Nunito-SemiBold.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/fonts/Nunito-SemiBold.ttf",
+		"oF": 0
+		},
 	"/fonts/OpenSans-Bold.ttf": {
 		"cB": 0,
 		"ft": 8192,
@@ -116,11 +123,61 @@
 		"plM": 4010945798143,
 		"prP": 0
 		},
+	"/img/common/icn-facebook.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/common/icn-facebook.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 4010962575359,
+		"prP": 0
+		},
+	"/img/common/icn-instagram.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/common/icn-instagram.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 4010962575359,
+		"prP": 0
+		},
+	"/img/common/icn-linkedin.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/common/icn-linkedin.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 4010962575359,
+		"prP": 0
+		},
+	"/img/common/icn-twitter.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/common/icn-twitter.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 4010962575359,
+		"prP": 0
+		},
 	"/img/common/logo-color.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 0,
 		"oAP": "/img/common/logo-color.svg",
+		"oF": 1,
+		"opt": 1,
+		"plM": 4010962575359,
+		"prP": 0
+		},
+	"/img/common/logo-footer.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 0,
+		"oAP": "/img/common/logo-footer.svg",
 		"oF": 1,
 		"opt": 1,
 		"plM": 4010962575359,
@@ -156,15 +213,16 @@
 		"plM": 4010962575359,
 		"prP": 0
 		},
-	"/img/entreprise/cover.svg": {
-		"ft": 2097152,
-		"miP": 0,
+	"/img/entreprise/cover.png": {
+		"ft": 32768,
+		"iS": 2429571,
 		"oA": 0,
-		"oAP": "/img/entreprise/cover.svg",
-		"oF": 1,
-		"opt": 1,
-		"plM": 4010962575359,
-		"prP": 0
+		"oAP": "/img/entreprise/cover.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/img/entreprise/ftr-icn-1.svg": {
 		"ft": 2097152,
@@ -196,35 +254,38 @@
 		"plM": 4010962575359,
 		"prP": 0
 		},
-	"/img/entreprise/pres-illu-1.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/entreprise/pres-illu-1.svg",
+	"/img/entreprise/pres-illu-1.png": {
+		"ft": 32768,
+		"iS": 688350,
+		"oA": 0,
+		"oAP": "/img/entreprise/pres-illu-1.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/img/entreprise/pres-illu-2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/entreprise/pres-illu-2.svg",
+	"/img/entreprise/pres-illu-2.png": {
+		"ft": 32768,
+		"iS": 679149,
+		"oA": 0,
+		"oAP": "/img/entreprise/pres-illu-2.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/img/entreprise/pres-illu-3.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/entreprise/pres-illu-3.svg",
+	"/img/entreprise/pres-illu-3.png": {
+		"ft": 32768,
+		"iS": 720286,
+		"oA": 0,
+		"oAP": "/img/entreprise/pres-illu-3.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
 	"/img/entreprise/shape-pres.svg": {
 		"ft": 2097152,
@@ -266,15 +327,16 @@
 		"plM": 4010962575359,
 		"prP": 1
 		},
-	"/img/home/desc-illu-3.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 1,
-		"oAP": "/img/home/desc-illu-3.svg",
-		"oF": 1,
-		"opt": 1,
-		"plM": 4010962575359,
-		"prP": 1
+	"/img/home/desc-illu-3.png": {
+		"ft": 32768,
+		"iS": 664293,
+		"oA": 0,
+		"oAP": "/img/home/desc-illu-3.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/img/home/ftr-icn-1.svg": {
 		"ft": 2097152,
@@ -641,15 +703,16 @@
 		"plM": 4010962575359,
 		"prP": 0
 		},
-	"/img/talents/cover.svg": {
-		"ft": 2097152,
-		"miP": 0,
+	"/img/talents/cover.png": {
+		"ft": 32768,
+		"iS": 2548587,
 		"oA": 0,
-		"oAP": "/img/talents/cover.svg",
-		"oF": 1,
-		"opt": 1,
-		"plM": 4010962575359,
-		"prP": 0
+		"oAP": "/img/talents/cover.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
 		},
 	"/img/talents/ftr-icn-1.svg": {
 		"ft": 2097152,
@@ -691,35 +754,38 @@
 		"plM": 4010962575359,
 		"prP": 0
 		},
-	"/img/talents/join-illu-1.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/talents/join-illu-1.svg",
+	"/img/talents/join-illu-1.png": {
+		"ft": 32768,
+		"iS": 728790,
+		"oA": 0,
+		"oAP": "/img/talents/join-illu-1.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/img/talents/join-illu-2.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/talents/join-illu-2.svg",
+	"/img/talents/join-illu-2.png": {
+		"ft": 32768,
+		"iS": 740809,
+		"oA": 0,
+		"oAP": "/img/talents/join-illu-2.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
-	"/img/talents/join-illu-3.svg": {
-		"ft": 2097152,
-		"miP": 0,
-		"oA": 2,
-		"oAP": "/img/talents/join-illu-3.svg",
+	"/img/talents/join-illu-3.png": {
+		"ft": 32768,
+		"iS": 699334,
+		"oA": 0,
+		"oAP": "/img/talents/join-illu-3.png",
 		"oF": 0,
+		"oIPL": 0,
 		"opt": 0,
-		"plM": 4010962575359,
-		"prP": 0
+		"oT": 1,
+		"q": 100
 		},
 	"/img/talents/tab-icn-1-color.svg": {
 		"ft": 2097152,

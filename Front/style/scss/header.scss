@@ -47,18 +47,35 @@
 				line-height: $link_lineheight_desktop;
 				font-family: $font_2;
 				margin-right: 65px;
+				position: relative;
 				&:last-child{
 					margin-right: 0px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					height: 1px;
+					width: 100%;
+					left: 50%;
+					top: calc(100% + 5px);
+					transform: translateX(-50%);
+					opacity: 0;
 				}
 			}
 			&.white{
 				a{
 					color: #FFF;
+					&:after{
+						background-color: #FFF;
+					}
 				}
 			}
 			&.color{
 				a{
 					color: $colorMain_1;
+					&:after{
+						background-color: #D453FE;
+					}
 				}
 			}
 		}
@@ -71,10 +88,33 @@
 			}
 		}
 	}
+	&.active-1{
+		.wrapper .container-link a:nth-child(1):after{
+			opacity: 1;
+		}
+	}
+	&.active-2{
+		.wrapper .container-link a:nth-child(2):after{
+			opacity: 1;
+		}
+	}
+	&.active-3{
+		.wrapper .container-link a:nth-child(3):after{
+			opacity: 1;
+		}
+	}
+	&.active-4{
+		.wrapper .container-link a:nth-child(4):after{
+			opacity: 1;
+		}
+	}
 	&.scroll{
 		box-shadow: 0 4px 20px 0 rgba(0,0,0,0.1);
 		background-color: #FFFFFF;
-		.logo {
+		.wrapper .container-link a{
+			color: $colorMain_1 ;
+		}
+		.wrapper .logo {
 			img:nth-child(1){
 				display: block;
 			}

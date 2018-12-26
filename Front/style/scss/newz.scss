@@ -26,6 +26,29 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
+	@keyframes floating {
+	  0%{
+	  	opacity: 1;
+	  } 
+	  50%{
+	  	opacity: 0;
+	  } 
+	  100%{
+	  	opacity: 1;
+	  }       
+	}
+	#Etoiles-Copy-2 path,
+	#Etoiles-Copy path{
+		animation-name: floating;
+		animation-duration: 4s;
+	  	animation-iteration-count: infinite;
+	  	animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+	  	@for $i from 1 to 40 {
+			&:nth-child(#{$i}) { 
+				animation-delay: $i * .15s; 
+			}
+		}
+	}
 	.container-text{
 		text-align: center;
 		width: 650px;
