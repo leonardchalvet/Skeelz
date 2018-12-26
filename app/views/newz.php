@@ -2,6 +2,7 @@
 use Prismic\Dom\RichText;
 use Prismic\Dom\Link;
 $document = $WPGLOBAL['document']->results[0]->data;
+$posts = $WPGLOBAL['posts'];
 ?>
 <html>
 	<head>
@@ -108,270 +109,74 @@ $document = $WPGLOBAL['document']->results[0]->data;
 			</section>
 
 			<section id="section-banner" class="container__anim">
-				<div class="wrapper">
-					<div class="container-img anim__slide anim__delayMedium_1" style="background-image: url(img/img-test/background-3.jpg);"></div>
-					<div class="container-text">
-						<div class="date anim__slide anim__delayMedium_2">10 décembre 2018</div>
-						<h3 class="anim__slide anim__delayMedium_3">Rejoignez notre Club !</h3>
-						<p class="anim__slide anim__delayMedium_4">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus nibh ac lectus tempus, et tempus dui varius. Ut placerat congue malesuada. Vivamus non diam ut augue fermentum rutrum. Donec massa magna, lobortis sit amet malesuada in, facilisis non nisi. Nulla id nisi est. Aliquam dignissim imperdiet tortor vel placerat. Ut ut velit finibus…
-						</p>
-						<a class="anim__slide anim__delayMedium_4" href="post.php">LIRE LA SUITE</a>
-						<div class="container-share anim__slide anim__delayMedium_5">
-							<a href="">
-								<img src="img/newz/Facebook-color.svg" alt="">
-							</a>
-							<a href="">
-								<img src="img/newz/Instagram-color.svg" alt="">
-							</a>
-							<a href="">
-								<img src="img/newz/LinkedIn-color.svg" alt="">
-							</a>
-							<a href="">
-								<img src="img/newz/Twitter-color.svg" alt="">
-							</a>
+				<?php $i = 0;
+					foreach ($posts->results as $el) { if($i == 0) { $el = $el->data;
+					?>	
+						<div class="wrapper">
+							<div class="container-img anim__slide anim__delayMedium_1" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
+							<div class="container-text">
+								<div class="date anim__slide anim__delayMedium_2">
+									<?= RichText::asText($el->banner_date); ?>
+								</div>
+								<h3 class="anim__slide anim__delayMedium_3">
+									<?= RichText::asText($el->banner_title); ?>
+								</h3>
+								<p class="anim__slide anim__delayMedium_4">
+									<?= RichText::asText($el->banner_text); ?>
+								</p>
+								<a class="anim__slide anim__delayMedium_4" href="post.php"><?= RichText::asText($document->content_cta_text); ?></a>
+								<div class="container-share">
+									<a href="<?= $el->banner_link_facebook->url; ?>">
+										<img src="img/newz/Facebook-color.svg" alt="">
+									</a>
+									<a href="<?= $el->banner_link_instagram->url; ?>">
+										<img src="img/newz/Instagram-color.svg" alt="">
+									</a>
+									<a href="<?= $el->banner_link_linkedin->url; ?>">
+										<img src="img/newz/LinkedIn-color.svg" alt="">
+									</a>
+									<a href="<?= $el->banner_link_twitter->url; ?>">
+										<img src="img/newz/Twitter-color.svg" alt="">
+									</a>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
+					<?php } $i++; } ?>
 			</section>
 
 			<section id="section-articles">
 				<div class="wrapper">
 					<div class="container-el">
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
+						<?php $i = 0;
+						foreach ($posts->results as $el) { if($i > 0) { $el = $el->data;
+						?>	
+							<div class="el">
+								<div class="cover" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
+								<div class="text">
+									<h4>
+										<?= RichText::asText($el->banner_title); ?>
+									</h4>
+									<p>
+										<?= RichText::asText($el->banner_text); ?>
+									</p>
+									<a href="post.php"><?= RichText::asText($document->content_cta_text); ?></a>
+									<div class="container-share">
+										<a href="<?= $el->banner_link_facebook->url; ?>">
+											<img src="img/newz/Facebook-color.svg" alt="">
+										</a>
+										<a href="<?= $el->banner_link_instagram->url; ?>">
+											<img src="img/newz/Instagram-color.svg" alt="">
+										</a>
+										<a href="<?= $el->banner_link_linkedin->url; ?>">
+											<img src="img/newz/LinkedIn-color.svg" alt="">
+										</a>
+										<a href="<?= $el->banner_link_twitter->url; ?>">
+											<img src="img/newz/Twitter-color.svg" alt="">
+										</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
+						<?php } $i++; } ?>
 					</div>
 					<div class="container-btn">
 						<a class="btn">

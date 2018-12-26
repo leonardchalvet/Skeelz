@@ -87,10 +87,11 @@ $app->get('/newz', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'newz'));
+  $posts     = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 10 ]);
   $header   = $api->query(Predicates::at('document.type', 'header'));
 
   // Render the page
-  render($app, 'newz', array('document' => $document, 'header' => $header));
+  render($app, 'newz', array('document' => $document, 'posts' => $posts, 'header' => $header));
 });
 
 $app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prismic) {
