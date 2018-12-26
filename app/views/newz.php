@@ -1,3 +1,8 @@
+<?php 
+use Prismic\Dom\RichText;
+use Prismic\Dom\Link;
+$document = $WPGLOBAL['document']->results[0]->data;
+?>
 <html>
 	<head>
 
@@ -11,7 +16,7 @@
 
 		<link rel="stylesheet" type="text/css" href="style/css/newz.css">
 
-		<script type="text/javascript" src="script/minify/jQuery.3.3.1-min.js"></script>
+		<?php include('head.php'); ?>
 
 	</head>
 	
@@ -28,9 +33,12 @@
 			<section id="section-home" class="container__anim">
 				<div class="wrapper">
 					<div class="container-text">
-						<h1 class="anim__slide anim__delayMedium_1">Les NewZ de <strong>SkeelZ !</strong></h1>
+						<?= RichText::asHtml($document->cover_title); ?>
+						<script type="text/javascript">
+							$('#section-home .wrapper h1').addClass('anim__slide anim__delayMedium_1');
+						</script>
 						<p class="anim__slide anim__delayMedium_2">
-							Pas facile à dire mais facile à lire. Retrouvez les actus, conseils, tips, coups de gueule, coups de coeur ...sur votre métier et le nôtre !
+							<?= RichText::asText($document->cover_text); ?>
 						</p>
 						<div class="container-input anim__slide anim__delayMedium_3">
 							<img src="img/newz/search.svg" alt="">
@@ -39,18 +47,20 @@
 					</div>
 				</div>
 				<div class="container-follow anim__slide anim__delayMedium_4">
-					<div class="title">Follow us</div>
+					<div class="title">
+						<?= RichText::asText($document->cover_networks_text); ?>
+					</div> 
 					<div class="container-rs">
-						<a href="">
+						<a href="<?= $document->link_network_facebook->url; ?>">
 							<img src="img/newz/rs-icn-Facebook.svg" alt="">
 						</a>
-						<a href="">
+						<a href="<?= $document->link_network_twitter->url; ?>">
 							<img src="img/newz/rs-icn-Twitter.svg" alt="">
 						</a>
-						<a href="">
+						<a href="<?= $document->link_network_instagram->url; ?>">
 							<img src="img/newz/rs-icn-Instagram.svg" alt="">
 						</a>
-						<a href="">
+						<a href="<?= $document->link_network_linkedin->url; ?>">
 							<img src="img/newz/rs-icn-LinkedIn.svg" alt="">
 						</a>
 					</div>
@@ -327,7 +337,7 @@
 					</div>
 					<div class="container-btn">
 						<a class="btn">
-							<span class="btn-text">CHARGER PLUS</span>
+							<span class="btn-text"><?= RichText::asText($document->content_seemore_text); ?></span>
 						</a>
 					</div>
 				</div>
@@ -336,11 +346,11 @@
 			<section id="section-newsletters">
 				<div class="wrapper">
 					<div class="container-text">
-						<h2>S'inscrire à la NewZletter</h2>
-						<p>Changeons ensemble notre manière de recruter</p>
+						<h2><?= RichText::asText($document->form_title); ?></h2>
+						<p><?= RichText::asText($document->form_text); ?></p>
 					</div>
 					<div class="container-mail">
-						<div class="title">Votre email</div>
+						<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
 						<div class="container-input">
 							<input type="text">
 							<div class="btn">

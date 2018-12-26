@@ -1,3 +1,8 @@
+<?php 
+use Prismic\Dom\RichText;
+use Prismic\Dom\Link;
+$document = $WPGLOBAL['document']->data;
+?>
 <html>
 	<head>
 
@@ -9,9 +14,9 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" type="text/css" href="style/css/post.css">
+		<link rel="stylesheet" type="text/css" href="/style/css/post.css">
 
-		<script type="text/javascript" src="script/minify/jQuery.3.3.1-min.js"></script>
+		<?php include('head.php'); ?>
 
 	</head>
 	
@@ -28,62 +33,52 @@
 				<div class="wrapper">
 					<div class="head">
 						<div class="date">
-							10 décembre 2018
+							<?= RichText::asText($document->banner_date); ?>
 						</div>
 						<h1>
-							Nam porttitor blandit accumsan ut vel dic accumsan ut vel dic
+							<?= RichText::asText($document->banner_title); ?>
 						</h1>
-						<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
+						<div class="cover" style="background-image: url(<?= $document->banner_image->url ?>);"></div>
 					</div>
 					<div class="content">
-						<p>
-							Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra 	   eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis nunc sollicitudin ultrices. Donec euismod scelerisque ligula. <strong>Maecenas eu varius risus</strong>, eu aliquet arcu. Curabitur fermentum suscipit est, tincidunt mattis lorem luctus id. Donec eget massa a diam condimentum pretium. Aliquam erat volutpat. Integer ut tincidunt orci. Etiam tristique, elit ut consectetur iaculis, metus lectus mattis justo, vel mollis eros neque quis augue.
-							
-						</p>
+						<?= RichText::asHtml($document->banner_text); ?>
 						<div class="container-quote">
-							<img class="obj" src="img/post/icn-quote.svg" alt="">
+							<img class="obj" src="/img/post/icn-quote.svg" alt="">
 							<p>
-								Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.
+								<?= RichText::asText($document->content_citation_text); ?>
 							</p>
-							<div class="name">Tum Tantasatityanon</div>
+							<div class="name">
+								<?= RichText::asText($document->content_citation_name); ?>
+							</div>
 						</div>
 						<p>
-							Sed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.Nam dapibus nisl vitae elit fringilla              , erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Vestibulum sed metus in lorem tristique ullamcorper id vitae erat. Nulla mollis sapien.
-							<img src="img/img-test/background-1.jpg" alt="">
+							<?= RichText::asText($document->content_text_1); ?>
+							<img src="<?= $document->content_image_1->url ?>" alt="">
 						</p>
 						
-						<h2>Donec facilisis tortor ut augue lacinia, at vive.</h2>
+						<h2>
+							<?= RichText::asText($document->content_title_2); ?>
+						</h2>
+						<?= RichText::asHtml($document->content_text_2); ?>
+						<h3>
+							<?= RichText::asText($document->content_title_3); ?>
+						</h3>
 						<p>
-							ed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.Nam dapibus nisl vitae elit fringilla rutrum, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Vestibulum sed metus in lorem tristique ullamcorper id vitae erat. Nulla mollis sapien.
+							<?= RichText::asText($document->content_text_3); ?>
 						</p>
-						<ul>
-							<li>Fusce vehicula</li>
-							<li>dolor arcu</li>
-							<li>sit amet blandit</li>
-							<li>dolor mollis nec</li>
-							<li>Donec viverra eleifend</li>
-							<li>lacus, vitae ullamcorper</li>
-							<li>metus. Sed sollicitudin</li>
-							<li>ipsum quis nunc</li>
-							<li>sollicitudin ultrices</li>
-						</ul>
-						<h3>Donec facilisis tortor ut augue lacinia, at vive.</h3>
-						<p>
-							ed lobortis ultrices lacus, a placerat metus rutrum sit amet. Aenean ut suscipit justo.Nam dapibus nisl vitae elit fringilla rutrum, erat a elementum rutrum, neque sem pretium metus, quis mollis nisl nunc et massa. Vestibulum sed metus in lorem tristique ullamcorper id vitae erat. Nulla mollis sapien.
-						</p>
-						<iframe src="https://www.youtube.com/embed/1A-OZxCr-Po" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<iframe src="<?= $document->content_video->url ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 						<div class="container-rs">
-							<a href="">
-								<img src="img/newz/Facebook-color.svg" alt="">
+							<a href="<?= $document->banner_link_facebook->url; ?>">
+								<img src="/img/newz/Facebook-color.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/Instagram-color.svg" alt="">
+							<a href="<?= $document->banner_link_instagram->url; ?>">
+								<img src="/img/newz/Instagram-color.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/LinkedIn-color.svg" alt="">
+							<a href="<?= $document->banner_link_linkedin->url; ?>">
+								<img src="/img/newz/LinkedIn-color.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/Twitter-color.svg" alt="">
+							<a href="<?= $document->banner_link_twitter->url; ?>">
+								<img src="/img/newz/Twitter-color.svg" alt="">
 							</a>
 						</div>
 					</div>
@@ -93,8 +88,7 @@
 
 		<?php include('common-footer.php') ?>
 
-		<script type="text/javascript" src="script/minify/post-min.js"></script>
-		<script type="text/javascript" src="script/minify/common-min.js"></script>
+		<script type="text/javascript" src="/script/minify/common-min.js"></script>
 
 	</body>
 </html>

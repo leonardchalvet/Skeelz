@@ -82,3 +82,25 @@ $app->get('/contact', function ($request, $response) use ($app, $prismic) {
   // Render the page
   render($app, 'contact', array('document' => $document, 'header' => $header));
 });
+
+$app->get('/newz', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'newz'));
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+
+  // Render the page
+  render($app, 'newz', array('document' => $document, 'header' => $header));
+});
+
+$app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->getByUID('post', $args['uid']);
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+
+  //echo "<script>console.log( 'Debug Objects: " . var_dump($document) . "' );</script>";
+
+  // Render the page
+  render($app, 'post', array('document' => $document, 'header' => $header));
+});

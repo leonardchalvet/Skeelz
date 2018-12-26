@@ -1,4 +1,4 @@
-<script type="text/javascript" src="script/minify/jQuery.3.3.1-min.js"></script>
+<script type="text/javascript" src="/script/minify/jQuery.3.3.1-min.js"></script>
 <script>
   window.prismic = {
     endpoint: '<?= PRISMIC_URL ?>'
