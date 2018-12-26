@@ -64,6 +64,7 @@
 			text-decoration: none;
 			img{
 				margin-right: 10px;
+				width: 20px;
 			}
 			span{
 				@include styleParagraphMedium;
@@ -124,13 +125,14 @@
 				position: absolute;
 				top: 0px;
 				height: 100%;
-				width: 150%;
+				width: calc(100% + 200px);
 				left: 0px;
 				background: linear-gradient(315deg, #581EFD 0%, #FA92A7 100%);
 				transition: all 0.25s ease;
+				background-position:-200px; 
 			}
 			&:hover:before{
-				 background-position:-200px;  
+				background-position:0px;  
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-<header id="header-desktop">
+<header id="header-desktop" class="<?php echo($linkActive); ?>">
 	<div class="wrapper">
 		<a class="logo <?php echo($styleLogo); ?>" href="index.php">
 			<img src="img/common/logo-color.svg" alt="">

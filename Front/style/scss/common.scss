@@ -3,6 +3,10 @@
 	src:url(../../fonts/Nunito-Regular.ttf);
 }
 @font-face {
+	font-family:Nunito-SemiBold;
+	src:url(../../fonts/Nunito-SemiBold.ttf);
+}
+@font-face {
 	font-family:OpenSans-Bold;
 	src:url(../../fonts/OpenSans-Bold.ttf);
 }
@@ -81,6 +85,7 @@ main
 	$font_1: Nunito-Regular;
 	$font_2: OpenSans-Bold;
 	$font_3: OpenSans-Regular;
+	$font_4: Nunito-SemiBold;
 
 /*=====  End of FONTS  ======*/
 
@@ -461,6 +466,7 @@ main
 		&:before{
 			content:'';
 			position: absolute;
+			z-index: 1;
 			top: 50%;
 			left: 0px;
 			height: 95%;
@@ -474,10 +480,13 @@ main
 .container__anim.reach{
 	.wrapLine.bnd{
 		span{
-			color: rgba(0, 0, 0, 1);
+			color: $colorMain_1;
 		}
 		span:before{
 			transform: translateY(-50%) translateX(-100%);
+		}
+		p:after{
+			opacity: 1 !important;
 		}
 		
 	}

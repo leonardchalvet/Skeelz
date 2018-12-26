@@ -18,6 +18,7 @@
 	<body>
 
 		<?php 
+			$linkActive = "active-3";
 			$styleLogo = "color";
 			$styleLink = "color";
 			include('common-header.php');
