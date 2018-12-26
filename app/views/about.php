@@ -22,6 +22,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 	<body>
 
 		<?php 
+			$linkActive = "active-3";
 			$styleLogo = "color";
 			$styleLink = "color";
 			include('common-header.php');
