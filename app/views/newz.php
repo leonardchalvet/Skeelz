@@ -110,7 +110,10 @@ $posts = $WPGLOBAL['posts'];
 
 			<section id="section-banner" class="container__anim">
 				<?php $i = 0;
-					foreach ($posts->results as $el) { if($i == 0) { $el = $el->data;
+					foreach ($posts->results as $el) { 
+						if($i == 0) { 
+							$uid = $el->uid;
+							$el = $el->data;
 					?>	
 						<div class="wrapper">
 							<div class="container-img anim__slide anim__delayMedium_1" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
@@ -124,7 +127,7 @@ $posts = $WPGLOBAL['posts'];
 								<p class="anim__slide anim__delayMedium_4">
 									<?= RichText::asText($el->banner_text); ?>
 								</p>
-								<a class="anim__slide anim__delayMedium_4" href="post.php"><?= RichText::asText($document->content_cta_text); ?></a>
+								<a class="anim__slide anim__delayMedium_4" href="/newz/<?php echo($uid); ?>"><?= RichText::asText($document->content_cta_text); ?></a>
 								<div class="container-share">
 									<a href="<?= $el->banner_link_facebook->url; ?>">
 										<img src="img/newz/Facebook-color.svg" alt="">
@@ -148,7 +151,10 @@ $posts = $WPGLOBAL['posts'];
 				<div class="wrapper">
 					<div class="container-el">
 						<?php $i = 0;
-						foreach ($posts->results as $el) { if($i > 0) { $el = $el->data;
+						foreach ($posts->results as $el) { 
+							if($i > 0) { 
+								$uid = $el->uid; 
+								$el = $el->data;
 						?>	
 							<div class="el">
 								<div class="cover" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
@@ -159,7 +165,7 @@ $posts = $WPGLOBAL['posts'];
 									<p>
 										<?= RichText::asText($el->banner_text); ?>
 									</p>
-									<a href="post.php"><?= RichText::asText($document->content_cta_text); ?></a>
+									<a href="/newz/<?php echo($uid); ?>"><?= RichText::asText($document->content_cta_text); ?></a>
 									<div class="container-share">
 										<a href="<?= $el->banner_link_facebook->url; ?>">
 											<img src="img/newz/Facebook-color.svg" alt="">

@@ -39,8 +39,9 @@ $app->get('/home', function ($request, $response) use ($app, $prismic) {
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'home'));
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
   // Render the page
-  render($app, 'home', array('document' => $document, 'header' => $header));
+  render($app, 'home', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/talent', function ($request, $response) use ($app, $prismic) {
@@ -48,9 +49,10 @@ $app->get('/talent', function ($request, $response) use ($app, $prismic) {
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'talent'));
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   // Render the page
-  render($app, 'talent', array('document' => $document, 'header' => $header));
+  render($app, 'talent', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/entreprise', function ($request, $response) use ($app, $prismic) {
@@ -58,9 +60,10 @@ $app->get('/entreprise', function ($request, $response) use ($app, $prismic) {
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'entreprise'));
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   // Render the page
-  render($app, 'entreprise', array('document' => $document, 'header' => $header));
+  render($app, 'entreprise', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/about', function ($request, $response) use ($app, $prismic) {
@@ -68,9 +71,10 @@ $app->get('/about', function ($request, $response) use ($app, $prismic) {
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'about'));
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   // Render the page
-  render($app, 'about', array('document' => $document, 'header' => $header));
+  render($app, 'about', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/contact', function ($request, $response) use ($app, $prismic) {
@@ -78,9 +82,10 @@ $app->get('/contact', function ($request, $response) use ($app, $prismic) {
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'contact'));
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   // Render the page
-  render($app, 'contact', array('document' => $document, 'header' => $header));
+  render($app, 'contact', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/newz', function ($request, $response) use ($app, $prismic) {
@@ -89,9 +94,10 @@ $app->get('/newz', function ($request, $response) use ($app, $prismic) {
   $document = $api->query(Predicates::at('document.type', 'newz'));
   $posts     = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 10 ]);
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   // Render the page
-  render($app, 'newz', array('document' => $document, 'posts' => $posts, 'header' => $header));
+  render($app, 'newz', array('document' => $document, 'posts' => $posts, 'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prismic) {
@@ -99,9 +105,10 @@ $app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prism
   $api = $prismic->get_api();
   $document = $api->getByUID('post', $args['uid']);
   $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
 
   //echo "<script>console.log( 'Debug Objects: " . var_dump($document) . "' );</script>";
 
   // Render the page
-  render($app, 'post', array('document' => $document, 'header' => $header));
+  render($app, 'post', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
