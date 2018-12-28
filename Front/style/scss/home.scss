@@ -510,6 +510,99 @@
 	}
 }
 
+@media screen and (max-width: $breakPoint_mobile){
+	#section-home .container-illu{
+		width: 100%;
+		margin-left: -25px;
+	}
+	#section-home .container-text{
+		width: 100%;
+		margin-top: 40px;
+	}
+	#section-home .container-text .container-btn{
+		margin-top: 40px;
+		flex-flow: row wrap;
+	}
+	#section-home .container-text .container-btn .btn{
+		border-radius: 40px;
+		width: 100%;
+		background: linear-gradient(134.85deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+		&:nth-child(1){
+			margin-bottom: 30px;
+		}
+	}
+	#section-home .container-text .container-btn:after{
+		content: initial;
+	}
+	#section-home .container-text .container-btn{
+		overflow: initial;
+		background: none;
+	}
+	#section-home .container-text .container-btn:before{
+		background: initial;
+	}
+
+	#section-ftr .container-el .el{
+		width: 100%;
+		margin-bottom: 50px;
+	}
+	#section-ftr .container-el .el .icn{
+		margin-top: initial;
+		margin-bottom: 22px;
+	}
+	#section-ftr .container-el .el .text{
+		padding-left: 0px;
+		width: 100%;
+	}
+
+	#section-desc{
+		padding: 80px 0px 80px 0px;
+	}
+	#section-desc .wrapper .container-el .el:nth-child(odd) .text,
+	#section-desc .wrapper .container-el .el .text{
+		order: 2;
+		width: 100%;
+	}
+	#section-desc .wrapper .container-el .el:nth-child(odd) .illu,
+	#section-desc .wrapper .container-el .el .illu{
+		order: 1 !important;
+		width: 100%;
+		margin-bottom: 35px;
+	}
+
+	#section-quotes .container .container-quotes{
+		width: 100%;
+	}
+	#section-quotes .container .container-logos{
+		width: 100%;
+		margin-top: 130px;
+	}
+	#section-quotes .container .container-logos .container-el{
+		width: 100%;
+	}
+	#section-quotes .container .container-quotes .container-btn{
+		top: 100%;
+		left: 50%;
+		transform: translateY(0px) translateX(-50%);
+	}
+
+	#section-prm .container-el
+	{
+		padding: 0px;
+		width: calc(100% + 50px);
+		margin-left: -25px;
+	}
+	#section-prm .container-el .el:nth-child(1){
+		width: 100%;
+		margin-top: 0px;
+	}
+	#section-prm .container-el .el:nth-child(2){
+		width: 100%;
+	}
+	#section-prm .container-el .el{
+		padding: 50px 30px 50px 30px;
+	}
+}
 
 /*====================================
 =            END PAGE HOME           =

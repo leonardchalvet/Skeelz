@@ -99,6 +99,10 @@ main
 		$h1_textsize_desktop: 50px;
 		$h1_lineheight_desktop: 54px;
 
+		/*----------  MOBILE  ----------*/
+		$h1_textsize_mobile: 40px;
+		$h1_lineheight_mobile: 50px;
+
 
 	/*----------  H2  ----------*/
 		/*----------  DESKTOP  ----------*/
@@ -216,8 +220,14 @@ main
 			font-family: $font_1;
 		  	color: $colorMain_1;
 
-		  	font-size: $h1_textsize_desktop;
-			line-height: $h1_lineheight_desktop;
+			@media screen and (min-width: $breakPoint_mobile){
+				font-size: $h1_textsize_desktop;
+				line-height: $h1_lineheight_desktop;
+			}
+			@media screen and (max-width: $breakPoint_mobile){
+				font-size: $h1_textsize_mobile;
+				line-height: $h1_lineheight_mobile;
+			}
 		}
 
 		/*----------  H2  ----------*/
