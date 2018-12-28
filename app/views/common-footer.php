@@ -25,16 +25,16 @@
 
 		<div class="container-rs">
 			<a href="<?= $footer->network_link_linkedin->url; ?>">
-				<img src="img/newz/LinkedIn-color.svg" alt="">
+				<img src="/img/newz/LinkedIn-color.svg" alt="">
 			</a>
 			<a href="<?= $footer->network_link_facebook->url; ?>">
-				<img src="img/newz/Facebook-color.svg" alt="">
+				<img src="/img/newz/Facebook-color.svg" alt="">
 			</a>
 			<a href="<?= $footer->network_link_twitter->url; ?>">
-				<img src="img/newz/Twitter-color.svg" alt="">
+				<img src="/img/newz/Twitter-color.svg" alt="">
 			</a>
 			<a href="<?= $footer->network_link_instagram->url; ?>">
-				<img src="img/newz/Instagram-color.svg" alt="">
+				<img src="/img/newz/Instagram-color.svg" alt="">
 			</a>
 		</div>
 		<div class="foot">

@@ -184,7 +184,7 @@ $posts = $WPGLOBAL['posts'];
 							</div>
 						<?php } $i++; } ?>
 					</div>
-					<div class="container-btn">
+					<div class="container-btn" data-seemore="1">
 						<a class="btn">
 							<span class="btn-text"><?= RichText::asText($document->content_seemore_text); ?></span>
 						</a>
@@ -220,3 +220,65 @@ $posts = $WPGLOBAL['posts'];
 
 	</body>
 </html>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		let saveContainerEl = $('#section-articles .wrapper .container-el').html();
+        
+        $("#section-home .container-text .container-input input").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            if(value.length > 0) {
+	            $("#section-banner").toggle(false);
+	            request(readDateSearch, "livesearch?value=" + value);
+	        }
+	        else {
+	        	$("#section-banner").toggle(true);
+	        	$('#section-articles .wrapper .container-el').empty();
+				$('#section-articles .wrapper .container-el').append(saveContainerEl);
+	        }
+        });
+
+        $('#section-articles .wrapper .container-btn').click(function(){
+        	if($("#section-home .container-text .container-input input").val().toLowerCase() <= 0) {
+	        	let n = parseInt($('#section-articles .wrapper .container-btn').attr('data-seemore'));
+				$('#section-articles .wrapper .container-btn').attr('data-seemore', n+1);
+
+	        	request(readDataSeemore, "seemore?n=" + n);
+	        }
+        })
+
+        // AJAX
+        function getXMLHttpRequest() { 
+		    let objXMLHttp = null;
+		    if (window.XMLHttpRequest) {
+		        objXMLHttp = new XMLHttpRequest();
+		    }
+		    else if (window.ActiveXObject) {
+		        objXMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		    return objXMLHttp;
+		}
+
+        function request(callback, get) {
+			let xhr = getXMLHttpRequest();
+			
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+					callback(xhr.responseText);
+				}
+			};
+
+			xhr.open("GET", get, true);
+			xhr.send(null);
+		}
+
+		function readDataSeemore(sData) {
+			$('#section-articles .wrapper .container-el').append(sData);
+		}
+
+		function readDateSearch(sData) {
+			$('#section-articles .wrapper .container-el').empty();
+			$('#section-articles .wrapper .container-el').append(sData);
+		}
+    });
+</script>

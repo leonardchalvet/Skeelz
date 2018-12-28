@@ -112,3 +112,23 @@ $app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prism
   // Render the page
   render($app, 'post', array('document' => $document, 'header' => $header, 'footer' => $footer));
 });
+
+$app->get('/seemore', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 1000 ]);
+  $newz = $api->query(Predicates::at('document.type', 'newz'));
+
+  // Render the page
+  render($app, 'seemore', array('document' => $document, 'newz' => $newz));
+});
+
+$app->get('/livesearch', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 9999 ]);
+  $newz = $api->query(Predicates::at('document.type', 'newz'));
+
+  // Render the page
+  render($app, 'livesearch', array('document' => $document, 'newz' => $newz));
+});
