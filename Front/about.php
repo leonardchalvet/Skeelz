@@ -28,7 +28,7 @@
 			<section id="section-home" class="container__anim">
 				<div class="wrapper">
 					<div class="container-text container__anim">
-						<h1 class="anim__slide anim__delayMedium_1">Bievenue chez <strong>Skeelz !</strong></h1>
+						<h1 class="anim__slide anim__delayMedium_1">Bienvenue chez <strong>Skeelz !</strong></h1>
 						<p class="anim__slide anim__delayMedium_2">
 							Le recrutement et la chasse de têtes pensés autrement.
 						</p>
