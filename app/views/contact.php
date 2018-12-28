@@ -34,7 +34,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 			<section id="section-contact" class="container__anim">
 				<div class="wrapper">
 					<div class="container-illu">
-						<img src="<?= $document->cover_image->url ?>" alt="">
+						<img src="/img/contact/cover.svg" alt="">
 					</div>
 					<div class="container-text">
 						<h2 class="anim__slide anim__delayMedium_1">
