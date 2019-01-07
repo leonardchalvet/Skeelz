@@ -80,5 +80,7 @@ function sectionTeamCaroussel(){
 
 
 $(window).on('load', function() {
-	sectionTeamCaroussel();
+	if (window.matchMedia("(min-width: 1250px)").matches) {
+		sectionTeamCaroussel();
+	}
 })

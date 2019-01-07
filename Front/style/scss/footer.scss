@@ -30,7 +30,7 @@ footer{
 					font-family: $font_2;
 					color: $colorMain_1;
 				}
-				margin-right: 70px;
+				margin-right: 30px;
 				&:last-child{
 					margin-right: 0px;
 				}
@@ -66,5 +66,24 @@ footer{
 				font-family: $font_3;
 			}
 		}
+	}
+}
+
+@media screen and (max-width: $breakPoint_mobile){
+	footer .wrapper .logo{
+		height: 30px;
+	}
+	footer .wrapper .container-link{
+		margin-top: 45px;
+	}
+	footer .wrapper .container-link li{
+		width: 100%;
+		margin-right: 0px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	footer .wrapper .container-rs{
+		position: initial;
+		margin-top: 30px;
 	}
 }

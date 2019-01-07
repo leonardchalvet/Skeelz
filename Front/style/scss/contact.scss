@@ -138,7 +138,38 @@
 	}
 }
 
-
+@media screen and (max-width: $breakPoint_mobile){
+	#section-contact .container-illu{
+		width: 100%;
+		margin-left: -25px;
+	}
+	#section-contact .container-text{
+		width: 100%;
+		margin-top: 40px;
+	}
+	#section-contact .container-text .container-btn{
+		margin-top: 40px;
+		flex-flow: row wrap;
+	}
+	#section-contact .container-text .container-btn .btn{
+		border-radius: 40px;
+		width: 100%;
+		background: linear-gradient(134.85deg, #FFA9BE 0%, #E257FE 21.94%, #562FFD 69.4%, #562FFD 100%);
+		&:nth-child(1){
+			margin-bottom: 30px;
+		}
+	}
+	#section-contact .container-text .container-btn:after{
+		content: initial;
+	}
+	#section-contact .container-text .container-btn{
+		overflow: initial;
+		background: none;
+	}
+	#section-contact .container-text .container-btn:before{
+		background: initial;
+	}
+}
 /*=======================================
 =            END PAGE CONTACT           =
 =======================================*/

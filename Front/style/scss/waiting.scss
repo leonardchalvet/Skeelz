@@ -1,0 +1,118 @@
+@import 'common.scss';
+
+#header-desktop{
+	display: none;
+}
+#header-mobile{
+	display: none;
+}
+footer{
+	display: none;
+}
+
+#section-waiting{
+	position: relative;
+	min-height: 100vh;
+	padding: 290px 0px 200px 0px;
+	background: linear-gradient(138.76deg, #D955FF 0%, #562FFD 30.49%, #489BFF 86.5%, #48CAFF 100%);
+	.container-text{
+		text-align: center;
+	}
+	img{
+		width: 240px;
+	}
+	h1{
+		@include styleH1;
+		color: #FFF;
+		margin-top: 120px;
+	}
+	p{
+		margin-top: 40px;
+		@include styleParagraphMedium;
+		color: #FFF;
+		a{
+			color: #FFF;
+		}
+	}
+	.container-follow{
+		margin-top: 190px;
+		width: 300px;
+		margin: 190px auto 0px auto;
+		text-align: center;
+		.title{
+			@include styleParagraphSmall;
+			color: #FFF;
+			display: inline-block;
+			position: relative;
+			&:before,
+			&:after{
+				content: '';
+				width: 14px;
+				height: 1px;
+				background-color: #FFF;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			&:before{
+				right: calc(100% + 6px);
+			}
+			&:after{
+				left: calc(100% + 6px);
+			}
+		}
+		.container-rs{
+			margin-top: 20px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			a{
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+				margin-right: 15px;
+				transition: all 0.25s ease;
+				&:last-child{
+					margin-right: 0px;
+				}
+				img{
+					height: 15px;
+					width: 15px;
+				}
+				&:hover{
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+	.stars{
+		position: absolute;
+		top: 8%;
+		left: 90%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@keyframes floating {
+	  0%{
+	  	opacity: 1;
+	  } 
+	  50%{
+	  	opacity: 0;
+	  } 
+	  100%{
+	  	opacity: 1;
+	  }       
+	}
+	#Etoiles-Copy-2 path,
+	#Etoiles-Copy path{
+		animation-name: floating;
+		animation-duration: 4s;
+	  	animation-iteration-count: infinite;
+	  	animation-timing-function: cubic-bezier(0.54, 0.085, 0.5, 0.92);
+	  	@for $i from 1 to 40 {
+			&:nth-child(#{$i}) { 
+				animation-delay: $i * .15s; 
+			}
+		}
+	}
+}

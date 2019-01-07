@@ -25,6 +25,16 @@
 					NEWZ
 				</a>
 			</li>
+			<li>
+				<a href="">
+					POLITIQUE DE CONFIDENTIALITÉ
+				</a>
+			</li>
+			<li>
+				<a href="">
+					MENTIONS LÉGALES 
+				</a>
+			</li>
 		</ul>
 
 		<div class="container-rs">

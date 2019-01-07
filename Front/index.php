@@ -20,6 +20,7 @@
 		<?php 
 			$styleLogo = "white";
 			$styleLink = "color";
+			$styleBurger = "color";
 			include('common-header.php');
 		?>
 

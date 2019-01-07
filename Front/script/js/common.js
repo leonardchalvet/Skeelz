@@ -137,10 +137,17 @@ $window.scroll(function() {
 
     if ( $window.scrollTop() >= 1 ) {
         $('#header-desktop').addClass('scroll');
+        $('#header-mobile').addClass('scroll');
     } else {
     	$('#header-desktop').removeClass('scroll');
+    	$('#header-mobile').removeClass('scroll');
     };
 });
+
+$('#header-mobile .head .wrapper .container-action').click(function(){
+	$('#header-mobile').toggleClass('open');
+	$('body').toggleClass('block');
+})
 
 
 $(window).on('load', function() {

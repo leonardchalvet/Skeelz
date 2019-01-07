@@ -21,6 +21,7 @@
 			$linkActive = "active-1";
 			$styleLogo = "white";
 			$styleLink = "white";
+			$styleBurger = "white";
 			include('common-header.php');
 		?>
 

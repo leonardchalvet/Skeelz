@@ -861,6 +861,13 @@
 		"oAP": "/newz.php",
 		"oF": 0
 		},
+	"/pc.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/pc.php",
+		"oF": 0
+		},
 	"/post.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -978,6 +985,16 @@
 		"sC": 0,
 		"tS": 0
 		},
+	"/script/minify/newz-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/script/minify/newz-min-min.js",
+		"oF": 0,
+		"sC": 0,
+		"tS": 0
+		},
 	"/script/minify/talents-min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -1058,6 +1075,16 @@
 		"oF": 0,
 		"oS": 3
 		},
+	"/style/css/waiting.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/waiting-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"/style/scss/about.scss": {
 		"aP": 1,
 		"bl": 0,
@@ -1067,6 +1094,19 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/style/css/about.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
+	"/style/scss/cgu.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/cgu.css",
 		"oF": 0,
 		"oS": 3,
 		"uL": 1
@@ -1188,11 +1228,31 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"/style/scss/waiting.scss": {
+		"aP": 1,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/waiting.css",
+		"oF": 0,
+		"oS": 3,
+		"uL": 1
+		},
 	"/talents.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "/talents.php",
+		"oF": 0
+		},
+	"/waiting.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "/waiting.php",
 		"oF": 0
 		}
 	},

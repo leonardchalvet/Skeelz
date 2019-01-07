@@ -198,6 +198,36 @@
 	}
 }
 
+@media screen and (max-width: $breakPoint_mobile){
+	#section-post{
+		padding-top: 95px;
+	}
+	#section-post .content{
+		width: 100%;
+		padding-bottom: 0px;
+	}
+	#section-post .head{
+		text-align: left;
+	}
+	#section-post .head .cover{
+		height: 200px;
+		width: calc(100% + 50px);
+		margin-left: -25px;
+	}
+	#section-post .content{
+		margin-top: 40px;
+	}
+	#section-post .content .container-quote{
+		width: 100%;
+	}
+	#section-post .content>p>img{
+		border-radius: 4px;
+	}
+	#section-post .content iframe{
+		height: 160px;
+	}
+}
+
 /*====================================
 =            END PAGE POST           =
 ====================================*/

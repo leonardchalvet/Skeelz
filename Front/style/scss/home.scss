@@ -510,6 +510,19 @@
 	}
 }
 
+@media screen and (min-width: $breakPoint_mobile) and (max-width: $breakPoint_tablet){
+	#section-home .wrapper{
+		align-items: flex-start;
+	}
+	#section-home .container-text{
+		width: 400px;
+		padding-top: 100px;
+	}
+	#section-home .container-illu{
+		width: calc(50% + ((100vw - #{$grid_mobile})/2));
+		margin-left: calc(0px - (100vw - #{$grid_mobile})/2);
+	}
+}
 @media screen and (max-width: $breakPoint_mobile){
 	#section-home .container-illu{
 		width: 100%;
@@ -570,20 +583,38 @@
 		margin-bottom: 35px;
 	}
 
+	#section-quotes{
+		padding-bottom: 40px;
+	}
 	#section-quotes .container .container-quotes{
 		width: 100%;
 	}
 	#section-quotes .container .container-logos{
 		width: 100%;
-		margin-top: 130px;
+		margin-top: 30px;
 	}
 	#section-quotes .container .container-logos .container-el{
 		width: 100%;
 	}
 	#section-quotes .container .container-quotes .container-btn{
-		top: 100%;
-		left: 50%;
-		transform: translateY(0px) translateX(-50%);
+		width: 100%;
+		position: initial;
+		justify-content: center;
+		transform: initial;
+		margin-top: 40px;
+		display: flex;
+		flex-flow: row wrap;
+	}
+	#section-quotes .container .container-quotes .container-btn .btn-next{
+		transform: rotate(-90deg);
+	}
+	#section-quotes .container .container-quotes .container-btn .btn-prev{
+		transform: rotate(-90deg);
+		margin-bottom: 0px;
+		margin-right: 20px;
+	}
+	#section-quotes .container .container-quotes .container-el .el .author .text{
+		width: calc(100% - 50px);
 	}
 
 	#section-prm .container-el
