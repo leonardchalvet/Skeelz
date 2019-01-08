@@ -1360,13 +1360,13 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<?= RichText::asText($document->cover_text); ?>
 						</p>
 						<div class="container-btn anim__slide anim__delayMedium_9">
-							<a class="btn" href="/<?= $document->cover_cta_link_1->type; ?>">
+							<a class="btn" href="<?= $document->cover_cta_link_1->url; ?>">
 								<span class="btn-text"><?= RichText::asText($document->cover_cta_text_1); ?></span>
 								<svg class="btn-arrow" viewBox="0 0 14 8">
 								   <use xlink:href="img/common/arrow.svg#arrow"></use>
 								</svg>
 							</a>
-							<a class="btn" href="/<?=$document->cover_cta_link_2->type; ?>">
+							<a class="btn" href="<?=$document->cover_cta_link_2->url; ?>">
 								<span class="btn-text"><?= RichText::asText($document->cover_cta_text_2); ?></span>
 								<svg class="btn-arrow" viewBox="0 0 14 8">
 								   <use xlink:href="img/common/arrow.svg#arrow"></use>
@@ -1500,7 +1500,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 								<p class="anim__slide anim__delayMedium_<?php echo($i+2); ?>">
 									<?= RichText::asText($el->common_cta_texte); ?>
 								</p>
-								<a href="/<?= $el->common_cta_link->type; ?>" class="btn anim__slide anim__delayMedium_<?php echo($i+3); ?>">
+								<a href="<?= $el->common_cta_link->url; ?>" class="btn anim__slide anim__delayMedium_<?php echo($i+3); ?>">
 									<span class="btn-text"><?= RichText::asText($el->common_cta_name); ?></span>
 									<svg class="btn-arrow" viewBox="0 0 14 8">
 									   <use xlink:href="img/common/arrow.svg#arrow"></use>

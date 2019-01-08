@@ -5,7 +5,7 @@ $document = $WPGLOBAL['document']->data;
 <html>
 	<head>
 
-		<title>PC</title>
+		<title>Mentions légales</title>
 
 		<meta name="description" content="" />
 
