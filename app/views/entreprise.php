@@ -1257,11 +1257,12 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<div class="title"><?= RichText::asText($document->form_label_societe); ?></div>
 							<input type="text">
 						</div>
-						<button class="btn anim__slide anim__delayMedium_8">
+						<button class="btn anim__slide anim__delayMedium_9">
 							<span class="btn-text"><?= RichText::asText($document->form_cta_texte); ?></span>
 							<svg class="btn-arrow" viewBox="0 0 14 8">
 							   <use xlink:href="img/common/arrow.svg#arrow"></use>
 							</svg>
+							<img class="btn-check" src="img/common/check.svg" alt="">
 						</button>
 					</form>
 				</div>

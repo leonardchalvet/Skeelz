@@ -110,7 +110,7 @@ $app->get('/newz/{uid}', function ($request, $response, $args) use ($app, $prism
   //echo "<script>console.log( 'Debug Objects: " . var_dump($document) . "' );</script>";
 
   // Render the page
-  render($app, 'post', array('document' => $document, 'header' => $header, 'footer' => $footer));
+  render($app, 'post', array('document' => $document, 'uid' => $args['uid'],'header' => $header, 'footer' => $footer));
 });
 
 $app->get('/seemore', function ($request, $response) use ($app, $prismic) {
