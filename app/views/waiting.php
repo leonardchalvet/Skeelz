@@ -1,3 +1,7 @@
+<?php 
+use Prismic\Dom\RichText;
+$document = $WPGLOBAL['document']->results[0]->data;
+?>
 <html>
 	<head>
 
@@ -11,7 +15,7 @@
 
 		<link rel="stylesheet" type="text/css" href="style/css/waiting.css">
 
-		<script type="text/javascript" src="script/minify/jQuery.3.3.1-min.js"></script>
+		<?php include('head.php'); ?>
 
 	</head>
 	
@@ -62,24 +66,22 @@
 
 				<div class="container-text">
 					<img src="img/common/logo-white.svg" alt="">
-					<h1>
-						Nous designons notre futur site mais aussi le recrutement de demain
-					</h1>
-					<p>a bientôt sur <a href="">Skeelz.com</a></p>
+					<?= RichText::asHtml($document->content_title); ?>
+					<?= RichText::asHtml($document->content_link); ?>
 					<div class="container-follow anim__slide anim__delayMedium_4">
 						<div class="title">Follow us</div>
 						<div class="container-rs">
-							<a href="">
-								<img src="img/newz/rs-icn-Facebook.svg" alt="">
+							<a href="<?= $document->link_facebook->url; ?>">
+								<img src="/img/newz/rs-icn-Facebook.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/rs-icn-Twitter.svg" alt="">
+							<a href="<?= $document->link_twitter->url; ?>">
+								<img src="/img/newz/rs-icn-Twitter.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/rs-icn-Instagram.svg" alt="">
+							<a href="<?= $document->link_instagram->url; ?>">
+								<img src="/img/newz/rs-icn-Instagram.svg" alt="">
 							</a>
-							<a href="">
-								<img src="img/newz/rs-icn-LinkedIn.svg" alt="">
+							<a href="<?= $document->link_linkedin->url; ?>">
+								<img src="/img/newz/rs-icn-Linkedin.svg" alt="">
 							</a>
 						</div>
 					</div>

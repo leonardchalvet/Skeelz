@@ -1,3 +1,7 @@
+<?php 
+use Prismic\Dom\RichText;
+$document = $WPGLOBAL['document']->data;
+?>
 <html>
 	<head>
 
@@ -11,7 +15,7 @@
 
 		<link rel="stylesheet" type="text/css" href="style/css/cgu.css">
 
-		<script type="text/javascript" src="script/minify/jQuery.3.3.1-min.js"></script>
+		<?php include('head.php'); ?>
 
 	</head>
 	
@@ -30,106 +34,26 @@
 			<section id="section-cgu">
 
 				<div class="wrapper">
-					<h1>
-						Politique de <strong>confidentialité</strong>
-					</h1>
+					<?= RichText::asHtml($document->content_title); ?>
 
 					<div class="container-col">
 						<div class="col">
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-							</div>
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-							</div>
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-							</div>
+							<?php
+							foreach ($document->body[0]->items as $el) {
+							?>	
+								<div class="el">
+									<?= RichText::asHtml($el->content_col_el); ?>
+								</div>
+							<?php } ?>
 						</div>
 						<div class="col">
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="mailto:mail@mail.com">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-								<h4>
-									Catégorie Fonction
-								</h4>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<h4>
-									Catégorie Fonction
-								</h4>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-							</div>
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-							</div>
-							<div class="el">
-								<h3>Qui sommes-nous ?</h3>
-								<p>
-									Lorsque vous postulez pour un emploi via notre site Web, d’autres sites d’emploi, les réseaux sociaux, notre processus d’inscription ou de publicité, nous recueillons des informations personnelles vous concernant à partir de votre CV, de notre formulaire d’inscription et d’autres sources (comme LinkedIn, par exemple). Ceci, afin de nous permettre de vous trouver un emploi approprié.Les informations que nous recueillons incluent, mais ne sont pas limitées à :
-									<a href="">mail@mail.com</a>
-								</p>
-								<ul>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-									<li>Lorem ipsum dolor sit amet</li>
-								</ul>
-							</div>
+							<?php
+							foreach ($document->body[1]->items as $el) {
+							?>	
+								<div class="el">
+									<?= RichText::asHtml($el->content_col_el); ?>
+								</div>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
