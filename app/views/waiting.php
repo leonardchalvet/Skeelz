@@ -81,7 +81,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 								<img src="/img/newz/rs-icn-Instagram.svg" alt="">
 							</a>
 							<a href="<?= $document->link_linkedin->url; ?>">
-								<img src="/img/newz/rs-icn-Linkedin.svg" alt="">
+								<img src="/img/newz/rs-icn-LinkedIn.svg" alt="">
 							</a>
 						</div>
 					</div>
