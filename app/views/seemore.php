@@ -33,16 +33,13 @@
 							<?= RichText::asText($newz->content_cta_text); ?>
 						</a>
 						<div class="container-share">
-							<a href="<?= $el->banner_link_facebook->url; ?>">
+							<a href="https://www.facebook.com/sharer/sharer.php?u=https://skeelz.com/newz/<?php echo($uid); ?>" target="_blank">
 								<img src="img/newz/Facebook-color.svg" alt="">
 							</a>
-							<a href="<?= $el->banner_link_instagram->url; ?>">
-								<img src="img/newz/Instagram-color.svg" alt="">
-							</a>
-							<a href="<?= $el->banner_link_linkedin->url; ?>">
+							<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://skeelz.com/newz/<?php echo($uid); ?>" target="_blank">
 								<img src="img/newz/LinkedIn-color.svg" alt="">
 							</a>
-							<a href="<?= $el->banner_link_twitter->url; ?>">
+							<a href="https://twitter.com/intent/tweet?url=https://skeelz.com/newz/<?php echo($uid); ?>" target="_blank">
 								<img src="img/newz/Twitter-color.svg" alt="">
 							</a>
 						</div>
