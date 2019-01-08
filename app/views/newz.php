@@ -1,6 +1,7 @@
 <?php 
 use Prismic\Dom\RichText;
 use Prismic\Dom\Link;
+use Prismic\Dom\Date;
 $document = $WPGLOBAL['document']->results[0]->data;
 $posts = $WPGLOBAL['posts'];
 ?>
@@ -120,7 +121,10 @@ $posts = $WPGLOBAL['posts'];
 							<div class="container-img anim__slide anim__delayMedium_1" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
 							<div class="container-text">
 								<div class="date anim__slide anim__delayMedium_2">
-									<?= RichText::asText($el->banner_date); ?>
+									<?php 
+									$date = Date::asDate($el->banner_date);
+									echo $date->format('j M Y');
+									?>
 								</div>
 								<h3 class="anim__slide anim__delayMedium_3">
 									<?= RichText::asText($el->banner_title); ?>

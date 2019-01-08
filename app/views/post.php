@@ -1,6 +1,7 @@
 <?php 
 use Prismic\Dom\RichText;
 use Prismic\Dom\Link;
+use Prismic\Dom\Date;
 $document = $WPGLOBAL['document']->data;
 $uid = $WPGLOBAL['uid'];
 ?>
@@ -35,7 +36,10 @@ $uid = $WPGLOBAL['uid'];
 				<div class="wrapper">
 					<div class="head">
 						<div class="date">
-							<?= RichText::asText($document->banner_date); ?>
+							<?php 
+							$date = Date::asDate($el->banner_date);
+							echo $date->format('j M Y');
+							?>
 						</div>
 						<h1>
 							<?= RichText::asText($document->banner_title); ?>
@@ -44,6 +48,43 @@ $uid = $WPGLOBAL['uid'];
 					</div>
 					<div class="content">
 						<?= RichText::asHtml($document->banner_text); ?>
+
+						<?php
+
+						$slices = $document->body;
+						foreach ($slices as $slice) {
+							switch ($slice->slice_type) {
+
+								case 'citation':
+									RichText::asText($slice->primary->quote);
+									var_dump($author);
+									echo '<div class="container-quote">
+											<img class="obj" src="/img/post/icn-quote.svg" alt="">
+											<p>'.
+												RichText::asText($slice->primary->quote)
+											.'</p>
+											<div class="name">'.
+												RichText::asText($slice->primary->author)
+											.'</div>
+										  </div>';
+									break;
+
+								case 'text':
+									echo RichText::asHtml($slice->primary->text);
+									break;
+
+								case 'image':
+									break;
+
+								case 'youtube':
+									break;
+								
+							}
+						}
+
+						?>
+						
+						<!--
 						<div class="container-quote">
 							<img class="obj" src="/img/post/icn-quote.svg" alt="">
 							<p>
@@ -80,7 +121,7 @@ $uid = $WPGLOBAL['uid'];
 								<img src="/img/newz/Twitter-color.svg" alt="">
 							</a>
 
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</section>

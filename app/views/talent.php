@@ -934,3 +934,6 @@ $document = $WPGLOBAL['document']->results[0]->data;
 
 	</body>
 </html>
+<script type="text/javascript">
+	
+</script>
