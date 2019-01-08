@@ -114,7 +114,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 								<p class="anim__slide anim__delayMedium_2">
 									<?= RichText::asText($document->number_text); ?>
 								</p>
-								<a href="/<?=$document->number_cta_link->type; ?>" class="btn anim__slide anim__delayMedium_3">
+								<a href="<?=$document->number_cta_link->url; ?>" class="btn anim__slide anim__delayMedium_3">
 									<span class="btn-text">
 										<?= RichText::asText($document->number_cta_tex); ?>
 									</span>

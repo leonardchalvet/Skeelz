@@ -51,14 +51,14 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<span><?= RichText::asText($document->cover_phone); ?></span>
 						</a>
 						<div class="container-btn anim__slide anim__delayMedium_9">
-							<a class="btn">
-								<span class="btn-text">JE SUIS UN TALENT</span>
+							<a class="btn" href="<?= $document->cover_cta_link_1->url; ?>">
+								<span class="btn-text"><?= RichText::asText($document->cover_cta_text_1); ?></span>
 								<svg class="btn-arrow" viewBox="0 0 14 8">
 								   <use xlink:href="img/common/arrow.svg#arrow"></use>
 								</svg>
 							</a>
-							<a class="btn">
-								<span class="btn-text">JE SUIS UNE ENTREPRISE</span>
+							<a class="btn" href="<?= $document->cover_cta_link_2->url; ?>">
+								<span class="btn-text"><?= RichText::asText($document->cover_cta_text_2); ?></span>
 								<svg class="btn-arrow" viewBox="0 0 14 8">
 								   <use xlink:href="img/common/arrow.svg#arrow"></use>
 								</svg>

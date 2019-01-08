@@ -1161,7 +1161,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 					<h1 class="anim__slide anim__delayMedium_2">
 						<?= RichText::asHtml($document->cover_title); ?>
 					</h1>
-					<a class="btn anim__slide anim__delayMedium_3" href="/<?= $document->cover_cta_link->type; ?>">
+					<a class="btn anim__slide anim__delayMedium_3" href="#section-form">
 						<span class="btn-text"><?= RichText::asHtml($document->cover_cta_text); ?></span>
 						<svg class="btn-arrow" viewBox="0 0 14 8">
 						   <use xlink:href="img/common/arrow.svg#arrow"></use>
