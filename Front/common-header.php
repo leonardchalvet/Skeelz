@@ -40,6 +40,23 @@
 				<li><a href="about.php">Equipe</a></li>
 				<li><a href="newz.php">Newz</a></li>
 			</ul>
+			<a href="contact.php" class="btn">
+				<span class="btn-text">CONTACT</span>	
+			</a>
 		</div>
 	</div>
 </header>
+
+<div id="cookies">
+	<div class="wrapper">
+		<div class="text">
+			<p>
+				This website uses cookies to ensure you get the best experience on our website.
+			</p>
+			<a href="">Lean more</a>
+		</div>
+		<div class="btn">
+			<span class="btn-text">ACCEPT COOKIES</span>	
+		</div>
+	</div>
+</div>

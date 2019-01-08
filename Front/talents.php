@@ -964,6 +964,7 @@
 							<svg class="btn-arrow" viewBox="0 0 14 8">
 							   <use xlink:href="img/common/arrow.svg#arrow"></use>
 							</svg>
+							<img class="btn-check" src="img/common/check.svg" alt="">
 						</button>
 					</form>
 				</div>

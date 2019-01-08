@@ -123,6 +123,16 @@
 		"plM": 4010945798143,
 		"prP": 0
 		},
+	"/img/common/check.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "/img/common/check.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 4010962575359,
+		"prP": 0
+		},
 	"/img/common/icn-facebook.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -1012,6 +1022,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/style/css/about-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/style/css/cgu.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/style/css/cgu-min.css",
 		"oF": 0,
 		"oS": 3
 		},

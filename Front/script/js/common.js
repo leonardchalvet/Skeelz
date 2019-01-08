@@ -123,8 +123,9 @@
 	};
 })(jQuery);
 
-
 /*=====  End of WRAP LINE  ======*/
+
+
 $(document).ready(function() {
 	$('.wrapLine').each(function (index) {
 		$(this).splitLines({tag:'<span>'});
@@ -167,4 +168,8 @@ $(window).on('load', function() {
 	});
 	setTimeout(function(){ animScroll(); }, 1000);
 	
+})
+
+$('#cookies .wrapper .btn').click(function(){
+	$('#cookies').addClass('hide');
 })
