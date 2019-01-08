@@ -27,6 +27,7 @@ $posts = $WPGLOBAL['posts'];
 			$linkActive = "active-4";
 			$styleLogo = "white";
 			$styleLink = "white";
+			$styleBurger = "white";
 			include('common-header.php');
 		?>
 
