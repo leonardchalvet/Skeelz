@@ -31,7 +31,7 @@ curl_close ($ch);
 
 // Index page
 $app->get('/', function ($request, $response) use ($app, $prismic) {
-  return $response->withStatus(302)->withHeader('Location', '/home');
+  return $response->withStatus(302)->withHeader('Location', '/waiting');
 });
 
 $app->get('/home', function ($request, $response) use ($app, $prismic) {
@@ -159,7 +159,6 @@ $app->get('/waiting', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'waiting'));
-  $document = $api->getByUID('pcml', 'skeelz_');
 
   // Render the page
   render($app, 'waiting', array('document' => $document));
