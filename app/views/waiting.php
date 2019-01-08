@@ -1,13 +1,11 @@
 <?php 
 use Prismic\Dom\RichText;
-use Prismic\Dom\Link;
 $document = $WPGLOBAL['document']->results[0]->data;
-$posts = $WPGLOBAL['posts'];
 ?>
 <html>
 	<head>
 
-		<title>Newz</title>
+		<title>Waiting</title>
 
 		<meta name="description" content="" />
 
@@ -15,7 +13,7 @@ $posts = $WPGLOBAL['posts'];
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" type="text/css" href="style/css/newz.css">
+		<link rel="stylesheet" type="text/css" href="style/css/waiting.css">
 
 		<?php include('head.php'); ?>
 
@@ -23,51 +21,10 @@ $posts = $WPGLOBAL['posts'];
 	
 	<body>
 
-		<?php 
-			$linkActive = "active-4";
-			$styleLogo = "white";
-			$styleLink = "white";
-			$styleBurger = "white";
-			include('common-header.php');
-		?>
-
 		<main>
 
-			<section id="section-home" class="container__anim">
-				<div class="wrapper">
-					<div class="container-text">
-						<?= RichText::asHtml($document->cover_title); ?>
-						<script type="text/javascript">
-							$('#section-home .wrapper h1').addClass('anim__slide anim__delayMedium_1');
-						</script>
-						<p class="anim__slide anim__delayMedium_2">
-							<?= RichText::asText($document->cover_text); ?>
-						</p>
-						<div class="container-input anim__slide anim__delayMedium_3">
-							<img src="img/newz/search.svg" alt="">
-							<input type="text" placeholder="Rechercher">
-						</div>
-					</div>
-				</div>
-				<div class="container-follow anim__slide anim__delayMedium_4">
-					<div class="title">
-						<?= RichText::asText($document->cover_networks_text); ?>
-					</div> 
-					<div class="container-rs">
-						<a href="<?= $document->link_network_facebook->url; ?>">
-							<img src="img/newz/rs-icn-Facebook.svg" alt="">
-						</a>
-						<a href="<?= $document->link_network_twitter->url; ?>">
-							<img src="img/newz/rs-icn-Twitter.svg" alt="">
-						</a>
-						<a href="<?= $document->link_network_instagram->url; ?>">
-							<img src="img/newz/rs-icn-Instagram.svg" alt="">
-						</a>
-						<a href="<?= $document->link_network_linkedin->url; ?>">
-							<img src="img/newz/rs-icn-LinkedIn.svg" alt="">
-						</a>
-					</div>
-				</div>
+			<section id="section-waiting">
+
 				<svg class="stars anim__fade anim__delayMedium_5" viewBox="0 0 1230 241" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 				        <g id="5a-Newz" transform="translate(-100.000000, -39.000000)" fill="#FFFFFF">
@@ -106,180 +63,36 @@ $posts = $WPGLOBAL['posts'];
 				        </g>
 				    </g>
 				</svg>
-				<img class="shape" src="img/newz/shape.svg" alt="">
-			</section>
 
-			<section id="section-banner" class="container__anim">
-				<?php $i = 0;
-					foreach ($posts->results as $el) { 
-						if($i == 0) { 
-							$uid = $el->uid;
-							$el = $el->data;
-					?>	
-						<div class="wrapper">
-							<div class="container-img anim__slide anim__delayMedium_1" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
-							<div class="container-text">
-								<div class="date anim__slide anim__delayMedium_2">
-									<?= RichText::asText($el->banner_date); ?>
-								</div>
-								<h3 class="anim__slide anim__delayMedium_3">
-									<?= RichText::asText($el->banner_title); ?>
-								</h3>
-								<p class="anim__slide anim__delayMedium_4">
-									<?= RichText::asText($el->banner_text); ?>
-								</p>
-								<a class="anim__slide anim__delayMedium_4" href="/newz/<?php echo($uid); ?>"><?= RichText::asText($document->content_cta_text); ?></a>
-								<div class="container-share">
-									<a href="<?= $el->banner_link_facebook->url; ?>">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="<?= $el->banner_link_instagram->url; ?>">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="<?= $el->banner_link_linkedin->url; ?>">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="<?= $el->banner_link_twitter->url; ?>">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
-					<?php } $i++; } ?>
-			</section>
-
-			<section id="section-articles">
-				<div class="wrapper">
-					<div class="container-el">
-						<?php $i = 0;
-						foreach ($posts->results as $el) { 
-							if($i > 0) { 
-								$uid = $el->uid; 
-								$el = $el->data;
-						?>	
-							<div class="el">
-								<div class="cover" style="background-image: url(<?= $el->banner_image->url ?>);"></div>
-								<div class="text">
-									<h4>
-										<?= RichText::asText($el->banner_title); ?>
-									</h4>
-									<p>
-										<?= RichText::asText($el->banner_text); ?>
-									</p>
-									<a href="/newz/<?php echo($uid); ?>"><?= RichText::asText($document->content_cta_text); ?></a>
-									<div class="container-share">
-										<a href="<?= $el->banner_link_facebook->url; ?>">
-											<img src="img/newz/Facebook-color.svg" alt="">
-										</a>
-										<a href="<?= $el->banner_link_instagram->url; ?>">
-											<img src="img/newz/Instagram-color.svg" alt="">
-										</a>
-										<a href="<?= $el->banner_link_linkedin->url; ?>">
-											<img src="img/newz/LinkedIn-color.svg" alt="">
-										</a>
-										<a href="<?= $el->banner_link_twitter->url; ?>">
-											<img src="img/newz/Twitter-color.svg" alt="">
-										</a>
-									</div>
-								</div>
-							</div>
-						<?php } $i++; } ?>
-					</div>
-					<div class="container-btn" data-seemore="1">
-						<a class="btn">
-							<span class="btn-text"><?= RichText::asText($document->content_seemore_text); ?></span>
-						</a>
-					</div>
-				</div>
-			</section>
-
-			<section id="section-newsletters">
-				<div class="wrapper">
-					<div class="container-text">
-						<h2><?= RichText::asText($document->form_title); ?></h2>
-						<p><?= RichText::asText($document->form_text); ?></p>
-					</div>
-					<div class="container-mail">
-						<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
-						<div class="container-input">
-							<input type="text">
-							<div class="btn">
-								<svg class="btn-arrow" viewBox="0 0 14 8">
-								   <use xlink:href="img/common/arrow.svg#arrow"></use>
-								</svg>
-							</div>
+				<div class="container-text">
+					<img src="img/common/logo-white.svg" alt="">
+					<?= RichText::asHtml($document->content_title); ?>
+					<?= RichText::asHtml($document->content_link); ?>
+					<div class="container-follow anim__slide anim__delayMedium_4">
+						<div class="title">Follow us</div>
+						<div class="container-rs">
+							<a href="<?= $document->link_facebook->url; ?>">
+								<img src="/img/newz/rs-icn-Facebook.svg" alt="">
+							</a>
+							<a href="<?= $document->link_twitter->url; ?>">
+								<img src="/img/newz/rs-icn-Twitter.svg" alt="">
+							</a>
+							<a href="<?= $document->link_instagram->url; ?>">
+								<img src="/img/newz/rs-icn-Instagram.svg" alt="">
+							</a>
+							<a href="<?= $document->link_linkedin->url; ?>">
+								<img src="/img/newz/rs-icn-Linkedin.svg" alt="">
+							</a>
 						</div>
 					</div>
 				</div>
+				
+				
 			</section>
 
 		</main>
 
 		<?php include('common-footer.php') ?>
 
-		<script type="text/javascript" src="script/minify/common-min.js"></script>
-
 	</body>
 </html>
-<script type="text/javascript">
-	$(document).ready(function(){
-
-		let saveContainerEl = $('#section-articles .wrapper .container-el').html();
-        
-        $("#section-home .container-text .container-input input").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            if(value.length > 0) {
-	            $("#section-banner").toggle(false);
-	            request(readDateSearch, "livesearch?value=" + value);
-	        }
-	        else {
-	        	$("#section-banner").toggle(true);
-	        	$('#section-articles .wrapper .container-el').empty();
-				$('#section-articles .wrapper .container-el').append(saveContainerEl);
-	        }
-        });
-
-        $('#section-articles .wrapper .container-btn').click(function(){
-        	if($("#section-home .container-text .container-input input").val().toLowerCase() <= 0) {
-	        	let n = parseInt($('#section-articles .wrapper .container-btn').attr('data-seemore'));
-				$('#section-articles .wrapper .container-btn').attr('data-seemore', n+1);
-
-	        	request(readDataSeemore, "seemore?n=" + n);
-	        }
-        })
-
-        // AJAX
-        function getXMLHttpRequest() { 
-		    let objXMLHttp = null;
-		    if (window.XMLHttpRequest) {
-		        objXMLHttp = new XMLHttpRequest();
-		    }
-		    else if (window.ActiveXObject) {
-		        objXMLHttp = new ActiveXObject("Microsoft.XMLHTTP");
-		    }
-		    return objXMLHttp;
-		}
-
-        function request(callback, get) {
-			let xhr = getXMLHttpRequest();
-			
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-					callback(xhr.responseText);
-				}
-			};
-
-			xhr.open("GET", get, true);
-			xhr.send(null);
-		}
-
-		function readDataSeemore(sData) {
-			$('#section-articles .wrapper .container-el').append(sData);
-		}
-
-		function readDateSearch(sData) {
-			$('#section-articles .wrapper .container-el').empty();
-			$('#section-articles .wrapper .container-el').append(sData);
-		}
-    });
-</script>

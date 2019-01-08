@@ -31,7 +31,7 @@ curl_close ($ch);
 
 // Index page
 $app->get('/', function ($request, $response) use ($app, $prismic) {
-  return $response->withStatus(302)->withHeader('Location', '/home');
+  return $response->withStatus(302)->withHeader('Location', '/waiting');
 });
 
 $app->get('/home', function ($request, $response) use ($app, $prismic) {
@@ -131,4 +131,35 @@ $app->get('/livesearch', function ($request, $response) use ($app, $prismic) {
 
   // Render the page
   render($app, 'livesearch', array('document' => $document, 'newz' => $newz));
+});
+
+$app->get('/politique-de-confidentialite', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->getByUID('pcml', 'skeelz_politiquedeconfidentialite');
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
+
+  // Render the page
+  render($app, 'politique', array('document' => $document, 'header' => $header, 'footer' => $footer));
+});
+
+$app->get('/mentions-legales', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->getByUID('pcml', 'skeelz_mentionslegales');
+  $header   = $api->query(Predicates::at('document.type', 'header'));
+  $footer   = $api->query(Predicates::at('document.type', 'footer'));
+
+  // Render the page
+  render($app, 'mentions', array('document' => $document, 'header' => $header, 'footer' => $footer));
+});
+
+$app->get('/waiting', function ($request, $response) use ($app, $prismic) {
+  // Query the API
+  $api = $prismic->get_api();
+  $document = $api->query(Predicates::at('document.type', 'waiting'));
+
+  // Render the page
+  render($app, 'waiting', array('document' => $document));
 });

@@ -25,6 +25,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 		<?php 
 			$styleLogo = "white";
 			$styleLink = "color";
+			$styleBurger = "color";
 			include('common-header.php');
 		?>
 

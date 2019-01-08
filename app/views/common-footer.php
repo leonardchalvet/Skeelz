@@ -4,22 +4,28 @@
 ?>
 <footer>
 	<div class="wrapper">
-		<a href="/<?= $footer->cta_link_home->type; ?>" class="logo">
+		<a href="<?= $footer->cta_link_home->url; ?>" class="logo">
 			<img src="<?= $footer->logo_color->url ?>" alt="">
 		</a>
 		
 		<ul class="container-link">
 			<li>
-				<a href="/<?= $footer->cta_link_talent->type; ?>"><?= RichText::asText($footer->cta_talent); ?></a>
+				<a href="<?= $footer->cta_link_talent->url; ?>"><?= RichText::asText($footer->cta_talent); ?></a>
 			</li>
 			<li>
-				<a href="/<?= $footer->cta_link_entreprise->type; ?>"><?= RichText::asText($footer->cta_entreprise); ?></a>
+				<a href="<?= $footer->cta_link_entreprise->url; ?>"><?= RichText::asText($footer->cta_entreprise); ?></a>
 			</li>
 			<li>
-				<a href="/<?= $footer->cta_link_team->type; ?>"><?= RichText::asText($footer->cta_team); ?></a>
+				<a href="<?= $footer->cta_link_team->url; ?>"><?= RichText::asText($footer->cta_team); ?></a>
 			</li>
 			<li>
-				<a href="/<?= $footer->cta_link_newz->type; ?>"><?= RichText::asText($footer->cta_newz); ?></a>
+				<a href="<?= $footer->cta_link_newz->url; ?>"><?= RichText::asText($footer->cta_newz); ?></a>
+			</li>
+			<li>
+				<a href="<?= $footer->cta_link_pc->url; ?>"><?= RichText::asText($footer->cta_pc); ?></a>
+			</li>
+			<li>
+				<a href="<?= $footer->cta_link_ml->url; ?>"><?= RichText::asText($footer->cta_ml); ?></a>
 			</li>
 		</ul>
 
