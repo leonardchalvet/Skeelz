@@ -347,7 +347,9 @@
 				width: 100%;
 			}
 			&.error{
-				.title{
+				.title,
+				input,
+				textarea{
 					color: #F22323;
 				}
 			}

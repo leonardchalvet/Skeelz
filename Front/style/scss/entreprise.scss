@@ -257,6 +257,13 @@
 			&.textarea{
 				width: 100%;
 			}
+			&.error{
+				.title,
+				input,
+				textarea{
+					color: #F22323;
+				}
+			}
 		}
 		button{
 			cursor: pointer;
