@@ -19,7 +19,7 @@
 			   		"Mail : "   . "\n" . $mail   . "\n" . "\n".
 			   		"Texte : "  . "\n" . $texte  . "\n" . "\n";
 
-		mail("alexis@agence-me.com", 'TALENT', $content, $header);
+		mail("talent@skeelz.com", 'TALENT', $content, $header);
 
 	}
 

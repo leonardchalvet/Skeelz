@@ -11,7 +11,7 @@
 
 		$content =  "Mail : "     . "\n" . $mail     . "\n" . "\n";
 
-		mail("alexis@agence-me.com", 'NEWZLETTER', $content, $header);
+		mail("hello@skeelz.com", 'NEWZLETTER', $content, $header);
 
 	}
 
