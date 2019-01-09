@@ -1350,7 +1350,7 @@
 					</div>
 					<div class="container-text">
 						<h2 class="wrapLine bnd">
-							Les talents d'aujourd'hui sont ici. Ceux de <i>demain</i> aussi.
+							Les talents d'aujourd'hui sont ici. Ceux de <em>demain</em> aussi.
 						</h2>
 						<p class="anim__slide anim__delayMedium_7">
 							Bienvenue chez Skeelz ! Le premier réseau d'Experts qui aide les entreprises ambitieuses à attirer, intégrer et retenir les meilleurs talents de l'Ecosystème Digital.
