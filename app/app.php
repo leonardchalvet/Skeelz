@@ -173,9 +173,9 @@ $app->post('/github-webhook', function() use ($app) {
     $ref = $data["ref"] ?? "none";
     $dir = __DIR__."/..";
     if ($ref != "refs/heads/master") {
-        shell_exec("cd $dir && git pull > git.log 2>&1");
+        shell_exec("cd $dir && echo $ref >> git.log 2>&1");
     }
-    shell_exec("cd $dir && git pull > git.log 2>&1");
+    shell_exec("cd $dir && git pull >> git.log 2>&1");
 });
 
 /**
