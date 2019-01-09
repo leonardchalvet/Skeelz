@@ -184,5 +184,9 @@ $app->post('/github-webhook', function() use ($app) {
  */
 $app->get('/github-webhook', function() use ($app) {
     $dir = __DIR__."/..";
+    echo "<pre>";
     echo nl2br(shell_exec("cd $dir && git pull 2>&1"));
+    echo "<hr>";
+    echo nl2br(shell_exec("cd $dir && git log  --pretty=oneline -10"));
+    echo "<pre>";
 });
