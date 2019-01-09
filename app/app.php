@@ -177,6 +177,7 @@ $app->post('/github-webhook', function() use ($app) {
     $dir = __DIR__."/..";
     shell_exec("cd $dir && git pull 2>&1");
 });
+
 /**
  * Webhook github
  * manual pull
