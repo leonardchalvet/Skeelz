@@ -8,9 +8,8 @@ $uid = $WPGLOBAL['uid'];
 <html>
 	<head>
 
-		<title>Post</title>
-
-		<meta name="description" content="" />
+		<title><?= RichText::asText($document->meta_title); ?></title>
+		<meta name="description" content="<?= RichText::asText($document->meta_description); ?>" />
 
 		<meta http-equiv="content-type" content="text/html; charset=utf8" />
 

@@ -8,9 +8,8 @@ $posts = $WPGLOBAL['posts'];
 <html>
 	<head>
 
-		<title>Newz</title>
-
-		<meta name="description" content="" />
+		<title><?= RichText::asText($document->meta_title); ?></title>
+		<meta name="description" content="<?= RichText::asText($document->meta_description); ?>" />
 
 		<meta http-equiv="content-type" content="text/html; charset=utf8" />
 
