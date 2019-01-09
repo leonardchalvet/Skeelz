@@ -171,10 +171,10 @@ $app->get('/waiting', function ($request, $response) use ($app, $prismic) {
 $app->post('/github-webhook', function() use ($app) {
     $data = json_decode(file_get_contents('php://input'), true);
     $ref = $data["ref"] ?? "none";
+    $dir = __DIR__."/..";
     if ($ref != "refs/heads/master") {
         shell_exec("cd $dir && git pull > git.log 2>&1");
     }
-    $dir = __DIR__."/..";
     shell_exec("cd $dir && git pull > git.log 2>&1");
 });
 
