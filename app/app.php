@@ -175,7 +175,7 @@ $app->post('/github-webhook', function() use ($app) {
         return null;
     }
     $dir = __DIR__."/..";
-    shell_exec("cd $dir && git pull 2>&1");
+    shell_exec("cd $dir && git pull > git.log 2>&1");
 });
 
 /**
