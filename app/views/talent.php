@@ -893,26 +893,26 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<span>OU</span>
 						</div>
 					</div>
-					<form action="">
+					<form action="mailTalent.php" method="post" onsubmit='return veriform(this);'>
 						<div class="label anim__slide anim__delayMedium_4">
 							<div class="title"><?= RichText::asText($document->form_label_prenom); ?></div>
-							<input type="text">
+							<input type="text" name="prenom">
 						</div>
 						<div class="label anim__slide anim__delayMedium_5">
 							<div class="title"><?= RichText::asText($document->form_label_nom); ?></div>
-							<input type="text">
+							<input type="text" name="nom">
 						</div>
 						<div class="label anim__slide anim__delayMedium_6">
 							<div class="title"><?= RichText::asText($document->form_label_telephone); ?></div>
-							<input type="text">
+							<input type="tel" name="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" placeholder="0660066006">
 						</div>
 						<div class="label anim__slide anim__delayMedium_7">
 							<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
-							<input type="text">
+							<input type="email" name="mail">
 						</div>
 						<div class="label textarea anim__slide anim__delayMedium_8">
 							<div class="title"><?= RichText::asText($document->form_label_textarea); ?></div>
-							<textarea></textarea>
+							<textarea name="texte"></textarea>
 						</div>
 						<button class="btn anim__slide anim__delayMedium_9">
 							<span class="btn-text"><?= RichText::asText($document->form_cta_text); ?></span>
@@ -935,5 +935,40 @@ $document = $WPGLOBAL['document']->results[0]->data;
 	</body>
 </html>
 <script type="text/javascript">
-	
+
+	function veriform(f) {
+
+		let prenom = verifchamp(f.prenom);
+		let nom    = verifchamp(f.nom);
+		let tel    = verifchamp(f.tel);
+		let mail   = verifchamp(f.mail);
+		let texte  = verifchamp(f.texte);
+
+		if(prenom || nom || tel || mail || texte) return false;
+
+		$('#section-form .btn').addClass('active');
+		return true;
+    }
+
+    function verifchamp(champ) {
+
+    	let parent = $('#section-form form .label input[name='+champ.name+']').parent() || null;
+    	if(parent.length == 0) {
+    		parent = $('#section-form form .label textarea[name='+champ.name+']').parent() || null;
+    	}
+
+    	if(champ.value.length === 0) {
+    		parent.addClass('error');
+    		return true;
+    	}
+    	else {
+    		parent.removeClass('error');
+    		return false;
+    	}
+    }
+
+
+
+
+
 </script>
