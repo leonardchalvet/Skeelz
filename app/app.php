@@ -172,7 +172,7 @@ $app->post('/github-webhook', function() use ($app) {
     $data = json_decode(file_get_contents('php://input'), true);
     $ref = $data["ref"] ?? "none";
     if ($ref != "refs/heads/master") {
-        return null;
+        shell_exec("cd $dir && git pull > git.log 2>&1");
     }
     $dir = __DIR__."/..";
     shell_exec("cd $dir && git pull > git.log 2>&1");
@@ -190,3 +190,4 @@ $app->get('/github-webhook', function() use ($app) {
     echo nl2br(shell_exec("cd $dir && git log  --pretty=oneline -10"));
     echo "<pre>";
 });
+
