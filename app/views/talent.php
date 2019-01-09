@@ -904,7 +904,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 						</div>
 						<div class="label anim__slide anim__delayMedium_6">
 							<div class="title"><?= RichText::asText($document->form_label_telephone); ?></div>
-							<input type="tel" name="tel" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" placeholder="0660066006">
+							<input type="tel" name="tel">
 						</div>
 						<div class="label anim__slide anim__delayMedium_7">
 							<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
