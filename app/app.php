@@ -163,3 +163,25 @@ $app->get('/waiting', function ($request, $response) use ($app, $prismic) {
   // Render the page
   render($app, 'waiting', array('document' => $document));
 });
+
+/**
+ * Webhook github
+ * auto pull if push on master
+ */
+$app->post('/github-webhook', function() use ($app) {
+    $data = json_decode(file_get_contents('php://input'), true);
+    $ref = $data["ref"] ?? "none";
+    if ($ref != "refs/heads/master") {
+        return null;
+    }
+    $dir = __DIR__."/..";
+    shell_exec("cd $dir && git pull 2>&1");
+});
+/**
+ * Webhook github
+ * manual pull
+ */
+$app->get('/github-webhook', function() use ($app) {
+    $dir = __DIR__."/..";
+    echo nl2br(shell_exec("cd $dir && git pull 2>&1"));
+});
