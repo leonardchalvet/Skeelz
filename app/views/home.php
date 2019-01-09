@@ -1352,9 +1352,10 @@ $document = $WPGLOBAL['document']->results[0]->data;
 						</svg>
 					</div>
 					<div class="container-text">
-						<h2 class="wrapLine bnd">
-							<?= RichText::asText($document->cover_title); ?>
-						</h2>
+						<?= RichText::asHtml($document->cover_title); ?>
+						<script type="text/javascript">
+							$('#section-home .container-text h2').addClass('wrapLine bnd');
+						</script>
 						<p class="anim__slide anim__delayMedium_7">
 							<?= RichText::asText($document->cover_text); ?>
 						</p>
