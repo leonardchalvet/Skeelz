@@ -154,7 +154,7 @@ $posts = $WPGLOBAL['posts'];
 					<div class="container-el">
 						<?php $i = 0;
 						foreach ($posts->results as $el) { 
-							if($i > 0) { 
+							if($i > 0 && $i < 10) { 
 								$uid = $el->uid; 
 								$el = $el->data;
 						?>	
@@ -183,11 +183,13 @@ $posts = $WPGLOBAL['posts'];
 							</div>
 						<?php } $i++; } ?>
 					</div>
+					<?php if($i > 10) { ?>
 					<div class="container-btn" data-seemore="1">
 						<a class="btn">
 							<span class="btn-text"><?= RichText::asText($document->content_seemore_text); ?></span>
 						</a>
 					</div>
+					<?php } ?>
 				</div>
 			</section>
 
@@ -197,17 +199,17 @@ $posts = $WPGLOBAL['posts'];
 						<h2><?= RichText::asText($document->form_title); ?></h2>
 						<p><?= RichText::asText($document->form_text); ?></p>
 					</div>
-					<div class="container-mail">
+					<form class="container-mail" action="newzletter.php" method="post">
 						<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
 						<div class="container-input">
-							<input type="text">
-							<div class="btn">
+							<input type="email" name="mail">
+							<button class="btn">
 								<svg class="btn-arrow" viewBox="0 0 14 8">
 								   <use xlink:href="img/common/arrow.svg#arrow"></use>
 								</svg>
-							</div>
+							</button>
 						</div>
-					</div>
+					</form>
 				</div>
 			</section>
 

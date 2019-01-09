@@ -1232,30 +1232,30 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<?= RichText::asText($document->form_title); ?>
 						</h2>
 					</div>
-					<form action="">
+					<form action="mailEntreprise.php" method="post" onsubmit='return veriform(this);'>
 						<div class="label anim__slide anim__delayMedium_2">
 							<div class="title"><?= RichText::asText($document->form_label_prenom); ?></div>
-							<input type="text">
+							<input type="text" name="prenom">
 						</div>
 						<div class="label anim__slide anim__delayMedium_3">
 							<div class="title"><?= RichText::asText($document->form_label_nom); ?></div>
-							<input type="text">
+							<input type="text" name="nom">
 						</div>
 						<div class="label anim__slide anim__delayMedium_4">
 							<div class="title"><?= RichText::asText($document->form_label_telephone); ?></div>
-							<input type="text">
+							<input type="text" name="tel">
 						</div>
 						<div class="label anim__slide anim__delayMedium_5">
 							<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
-							<input type="text">
+							<input type="text" name="mail">
 						</div>
 						<div class="label anim__slide anim__delayMedium_6">
 							<div class="title"><?= RichText::asText($document->form_label_poste); ?></div>
-							<input type="text">
+							<input type="text" name="poste">
 						</div>
 						<div class="label anim__slide anim__delayMedium_7">
 							<div class="title"><?= RichText::asText($document->form_label_societe); ?></div>
-							<input type="text">
+							<input type="text" name="societe">
 						</div>
 						<button class="btn anim__slide anim__delayMedium_9">
 							<span class="btn-text"><?= RichText::asText($document->form_cta_texte); ?></span>
@@ -1277,5 +1277,20 @@ $document = $WPGLOBAL['document']->results[0]->data;
 	</body>
 </html>
 <script type="text/javascript">
-	
+
+	function veriform(f) {
+
+		let prenom  = verifchamp(f.prenom);
+		let nom     = verifchamp(f.nom);
+		let tel     = verifchamp(f.tel);
+		let mail    = verifchamp(f.mail);
+		let poste   = verifchamp(f.poste);
+		let societe = verifchamp(f.societe);
+
+		if(prenom || nom || tel || mail || poste || societe) return false;
+
+		$('#section-form form button').addClass('active');
+		return true;
+    }
+
 </script>

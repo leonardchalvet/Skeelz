@@ -92,7 +92,7 @@ $app->get('/newz', function ($request, $response) use ($app, $prismic) {
   // Query the API
   $api = $prismic->get_api();
   $document = $api->query(Predicates::at('document.type', 'newz'));
-  $posts     = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 10 ]);
+  $posts     = $api->query(Predicates::at('document.type', 'post'), [ 'pageSize' => 11 ]);
   $header   = $api->query(Predicates::at('document.type', 'header'));
   $footer   = $api->query(Predicates::at('document.type', 'footer'));
 

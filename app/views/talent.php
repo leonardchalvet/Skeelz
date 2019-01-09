@@ -950,25 +950,4 @@ $document = $WPGLOBAL['document']->results[0]->data;
 		return true;
     }
 
-    function verifchamp(champ) {
-
-    	let parent = $('#section-form form .label input[name='+champ.name+']').parent() || null;
-    	if(parent.length == 0) {
-    		parent = $('#section-form form .label textarea[name='+champ.name+']').parent() || null;
-    	}
-
-    	if(champ.value.length === 0) {
-    		parent.addClass('error');
-    		return true;
-    	}
-    	else {
-    		parent.removeClass('error');
-    		return false;
-    	}
-    }
-
-
-
-
-
 </script>

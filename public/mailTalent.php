@@ -19,10 +19,10 @@
 			   		"Mail : "   . "\n" . $mail   . "\n" . "\n".
 			   		"Texte : "  . "\n" . $texte  . "\n" . "\n";
 
-		if (mail("alexis@agence-me.com", 'TALENT', $content, $header)) {
-			header('Location: /talent#section-form');
-		}
+		mail("alexis@agence-me.com", 'TALENT', $content, $header);
 
 	}
+
+	header('Location: /talent#section-form');
 
 ?>
