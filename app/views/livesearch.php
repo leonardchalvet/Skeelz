@@ -17,6 +17,9 @@
 			$el = $el->data;
 
 			$titre = RichText::asText($el->banner_title);
+
+			$titre = strtoupper($titre);
+			$value = strtoupper($value);
 			
 			if( strpos($titre, $value) !== false ) { ?>
 				<div class="el">
