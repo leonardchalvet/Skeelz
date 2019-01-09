@@ -323,6 +323,10 @@
 					
 				}
 			}
+			&:after {
+			  content: "";
+			  width: 330px;
+			}
 		}
 		.container-btn{
 			position: relative;
@@ -466,6 +470,9 @@
 
 	#section-articles .wrapper{
 		padding-bottom: 110px;
+	}
+	#section-articles .wrapper .container-el .el{
+		width: 100%;
 	}
 	#section-articles .wrapper .container-el .el .text>a{
 		position: initial;

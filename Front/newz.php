@@ -337,32 +337,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="el">
-							<div class="cover" style="background-image: url(img/img-test/background-1.jpg);"></div>
-							<div class="text">
-								<h4>
-									Rejoignez notre Club !
-								</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque repellendus reprehenderit debitis, veritatis officia eius quisquam aliquid soluta, itaque officiis tenetur accusantium magni. Illum, numquam consectetur qui dolor eum.
-								</p>
-								<a href="post.php">LIRE LA SUITE</a>
-								<div class="container-share">
-									<a href="">
-										<img src="img/newz/Facebook-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Instagram-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/LinkedIn-color.svg" alt="">
-									</a>
-									<a href="">
-										<img src="img/newz/Twitter-color.svg" alt="">
-									</a>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div class="container-btn">
 						<a class="btn">
