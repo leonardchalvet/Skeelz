@@ -21,7 +21,8 @@
 			   		"Poste : "    . "\n" . $poste    . "\n" . "\n".
 			   		"Societe : "  . "\n" . $societe  . "\n" . "\n";
 
-		mail("company@skeelz.com", 'ENTREPRISE', $content, $header);
+		//company@skeelz.com
+		mail("alexis@agence-me.com", 'ENTREPRISE', $content, $header);
 
 	}
 

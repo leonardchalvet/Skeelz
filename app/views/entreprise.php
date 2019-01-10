@@ -1231,7 +1231,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<?= RichText::asText($document->form_title); ?>
 						</h2>
 					</div>
-					<form action="mailEntreprise.php" method="post" onsubmit='return veriform(this);'>
+					<form action="mail/entreprise.php" method="post" onsubmit='return veriform(this);'>
 						<div class="label anim__slide anim__delayMedium_2">
 							<div class="title"><?= RichText::asText($document->form_label_prenom); ?></div>
 							<input type="text" name="prenom">

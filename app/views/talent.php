@@ -1,4 +1,7 @@
 <?php 
+if (!session_id()) {
+    session_start();
+}
 use Prismic\Dom\RichText;
 use Prismic\Dom\Link;
 $document = $WPGLOBAL['document']->results[0]->data;
@@ -881,7 +884,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 						<h2 class="anim__slide anim__delayMedium_1">
 							<?= RichText::asText($document->form_title); ?>
 						</h2>
-						<a class="btn anim__slide anim__delayMedium_2" href="<?=$document->form_cta_in_link->url; ?>">
+						<a class="btn anim__slide anim__delayMedium_2" href="/mail/linkedin.php">
 							<img src="img/talents/icn-linkedin.svg" alt="" class="btn-img">
 							<span class="btn-text"><?= RichText::asText($document->form_cta_in_text); ?></span>
 							<svg class="btn-arrow" viewBox="0 0 14 8">
@@ -892,14 +895,14 @@ $document = $WPGLOBAL['document']->results[0]->data;
 							<span>OU</span>
 						</div>
 					</div>
-					<form action="mailTalent.php" method="post" onsubmit='return veriform(this);'>
+					<form action="mail/talent.php" method="post" onsubmit='return veriform(this);'>
 						<div class="label anim__slide anim__delayMedium_4">
 							<div class="title"><?= RichText::asText($document->form_label_prenom); ?></div>
-							<input type="text" name="prenom">
+							<input type="text" name="prenom" value="<?php echo $_SESSION['POST']['prenom']; ?>">
 						</div>
 						<div class="label anim__slide anim__delayMedium_5">
 							<div class="title"><?= RichText::asText($document->form_label_nom); ?></div>
-							<input type="text" name="nom">
+							<input type="text" name="nom" value="<?php echo $_SESSION['POST']['nom']; ?>">
 						</div>
 						<div class="label anim__slide anim__delayMedium_6">
 							<div class="title"><?= RichText::asText($document->form_label_telephone); ?></div>
@@ -907,7 +910,7 @@ $document = $WPGLOBAL['document']->results[0]->data;
 						</div>
 						<div class="label anim__slide anim__delayMedium_7">
 							<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
-							<input type="email" name="mail">
+							<input type="email" name="mail" value="<?php echo $_SESSION['POST']['mail']; ?>">
 						</div>
 						<div class="label textarea anim__slide anim__delayMedium_8">
 							<div class="title"><?= RichText::asText($document->form_label_textarea); ?></div>
@@ -926,7 +929,17 @@ $document = $WPGLOBAL['document']->results[0]->data;
 
 		</main>
 
-		<?php include('common-footer.php') ?>
+		<?php 
+		include('common-footer.php');
+
+		var_dump($_SESSION['POST']);
+
+		if (session_id()) {
+		    $_SESSION = array();
+		    unset($_SESSION);
+		    session_destroy();
+		} 
+		?>
 
 		<script type="text/javascript" src="script/minify/talents-min.js"></script>
 		<script type="text/javascript" src="script/minify/common-min.js"></script>

@@ -198,7 +198,7 @@ $posts = $WPGLOBAL['posts'];
 						<h2><?= RichText::asText($document->form_title); ?></h2>
 						<p><?= RichText::asText($document->form_text); ?></p>
 					</div>
-					<form class="container-mail" action="newzletter.php" method="post">
+					<form class="container-mail" action="mail/newzletter.php" method="post">
 						<div class="title"><?= RichText::asText($document->form_label_mail); ?></div>
 						<div class="container-input">
 							<input type="email" name="mail">
