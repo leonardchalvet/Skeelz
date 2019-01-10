@@ -25,6 +25,8 @@
 			include('common-header.php');
 		?>
 
+		
+
 		<main>
 
 			<section id="section-cover" class="container__anim">
