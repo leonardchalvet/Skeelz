@@ -17,6 +17,8 @@ $posts = $WPGLOBAL['posts'];
 
 		<link rel="stylesheet" type="text/css" href="style/css/newz.css">
 
+		<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/bc930077fe1ac5aec5ad0332e/07fc2ecdc2337a56a3233fb96.js");</script>
+
 		<?php include('head.php'); ?>
 
 	</head>

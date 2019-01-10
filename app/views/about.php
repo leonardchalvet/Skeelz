@@ -87,10 +87,10 @@ $document = $WPGLOBAL['document']->results[0]->data;
 								<img class="icn anim__slide anim__delayMedium_<?php echo($i); ?>" src="<?= $el->common_el_illustration->url ?>" alt="">
 								<div class="text">
 									<h3 class="anim__slide anim__delayMedium_<?php echo($i+1); ?>">
-										<?= RichText::asHtml($el->common_el_title); ?>
+										<?= RichText::asText($el->common_el_title); ?>
 									</h3>
 									<p class="anim__slide anim__delayMedium_<?php echo($i+2); ?>">
-										<?= RichText::asHtml($el->common_el_texte); ?>
+										<?= RichText::asText($el->common_el_texte); ?>
 									</p>
 								</div>
 							</div>
