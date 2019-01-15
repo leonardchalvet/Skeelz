@@ -31,7 +31,7 @@ curl_close ($ch);
 
 // Index page
 $app->get('/', function ($request, $response) use ($app, $prismic) {
-  return $response->withStatus(302)->withHeader('Location', '/waiting');
+  return $response->withStatus(302)->withHeader('Location', '/home');
 });
 
 $app->get('/home', function ($request, $response) use ($app, $prismic) {
