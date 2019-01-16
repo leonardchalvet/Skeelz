@@ -17,6 +17,11 @@ $uid = $WPGLOBAL['uid'];
 
 		<link rel="stylesheet" type="text/css" href="/style/css/post.css">
 
+		<meta property="og:title"       content="<?= RichText::asText($document->meta_thumbnail_title); ?>" />
+		<meta property="og:description" content="<?= RichText::asText($document->meta_thumbnail_description); ?>" />
+		<meta property="og:image"       content="<?= $document->meta_thumbnail_image->url; ?>" />
+		<meta property="og:url"         content="<?= $document->meta_thumbnail_url->url; ?>" />
+
 		<?php include('head.php'); ?>
 
 	</head>
