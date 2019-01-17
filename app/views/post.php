@@ -22,6 +22,11 @@ $uid = $WPGLOBAL['uid'];
 		<meta property="og:image"       content="<?= $document->meta_thumbnail_image->url; ?>" />
 		<meta property="og:url"         content="<?= $document->meta_thumbnail_url->url; ?>" />
 
+		<meta name="twitter:card"        content="summary_large_image" />
+		<meta name="twitter:title"       content="<?= RichText::asText($document->meta_thumbnail_title); ?>" />
+		<meta name="twitter:description" content="<?= RichText::asText($document->meta_thumbnail_description); ?>" />
+		<meta name="twitter:image"       content="<?= $document->meta_thumbnail_image->url; ?>" />
+
 		<?php include('head.php'); ?>
 
 	</head>
